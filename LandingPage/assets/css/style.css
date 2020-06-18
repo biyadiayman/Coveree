@@ -115,6 +115,27 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   font-weight: 600;
 }
+.nav-menu a.btn {
+  display: block;
+  position: relative;
+  color: #0f394c;
+  transition: 0.3s;
+  font-size: 15px;
+  font-family: "Dosis", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #fff;
+  background: #49b5e7;
+  margin-top: -5%;
+}
+.nav-menu a.btn:hover{
+  background: #76c7ed;
+  color: #fff;
+}
+
+.nav-menu li:hover > a.btn {
+  color: #fff;
+}
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
   color: #49b5e7;
