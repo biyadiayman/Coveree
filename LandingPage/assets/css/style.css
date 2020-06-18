@@ -717,6 +717,64 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Faq
+--------------------------------------------------------------*/
+.faq .card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 0 10px 40px 10px;
+  background-color: #fff;
+  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.faq .card:hover {
+  transform: translateY(-5px);
+}
+
+.faq .card-header {
+  background-color: #fff;
+}
+
+.faq .icon {
+  position: absolute;
+  left: 1%;
+}
+
+.faq .icon i {
+  font-size: 20px;
+  margin-top: 20%;
+  margin-left: 25%;
+  line-height: 1;
+  transition: 0.5s;
+  transform: rotate(90deg);
+  color: #111;
+}
+
+.faq .collapsed .icon i {
+  transform: rotate(0deg);
+}
+.faq .title {
+  font-weight: 700;
+  font-size: 18px;
+  color: #111;
+}
+
+.faq .card:hover .title {
+  color: #49b5e7;
+}
+
+.faq .btn-link:hover {
+  text-decoration: none;
+}
+
+.faq .btn-link:focus {
+  box-shadow: none;
+  text-decoration: none;
+}
+
+/*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
 .portfolio .portfolio-item {
