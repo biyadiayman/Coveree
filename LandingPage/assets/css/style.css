@@ -219,6 +219,25 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/*Modal section*/
+
+/* Modal fix twitching header */
+.modal-open {
+  position: fixed;
+  overflow: scroll;
+  width: 100%;
+  padding-right: 0!important;
+}
+
+.modal .btn {
+  background: #49b5e7;
+  color: #fff;
+}
+
+.modal .btn:hover {
+  background: #76c7ed;
+}
+
 /* Mobile Navigation */
 .mobile-nav-toggle {
   position: fixed;

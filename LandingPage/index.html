@@ -42,7 +42,7 @@
           <li><a href="#about">A propos</a></li>
           <li><a href="#faq">F.A.Q</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="">Connexion</a></li>
+          <li><a href="" class="login" data-toggle="modal" data-target="#modalLoginForm">Connexion</a></li>
           <li><a href="" class="btn">Obtenir mon prix</a></li>
 
         </ul>
@@ -50,6 +50,43 @@
 
     </div>
   </header><!-- End Header -->
+
+  <!-- Modal Connexion -->
+  <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Connexion</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <i class="bx bx-user"></i>
+          <label data-error="wrong" data-success="right" for="defaultForm-email">Votre adresse mail :</label>
+          <input type="email" id="defaultForm-email" class="form-control validate">
+        </div>
+
+        <div class="md-form mb-4">
+          <i class="bx bx-lock-alt"></i>
+          <label data-error="wrong" data-success="right" for="defaultForm-pass">Votre mot de passe :</label>
+          <input type="password" id="defaultForm-pass" class="form-control validate">
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-default">Se connecter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-center">
+  <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">Launch
+    Modal Login Form</a>
+</div><!-- End Modal Connexion -->
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
@@ -174,7 +211,8 @@
                 </div>
                 <div id="coll1" class="collapse">
                   <div class="card-body">
-                    Vous pouvez nous contacter via le formualire ci dessous
+                    Le meilleur moyen de nous contacter est via la section "Contact" de cette page, nous
+                    vous contacterons ensuite le plus rapidement possible.
                   </div>
                 </div>
               </div>
