@@ -269,9 +269,26 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
   outline: none;
 }
+.mobile-nav a.btn {
+  display: block;
+  position: relative;
+  color: #fff;
+  padding: 10px 20px;
+  font-weight: 500;
+  outline: none;
+  background: #49b5e7;
+  margin-left: 3%;
+  margin-right: 3%;
+}
 
 .mobile-nav a:hover, .mobile-nav .active > a, .mobile-nav li:hover > a {
   color: #49b5e7;
+  text-decoration: none;
+}
+
+.mobile-nav a.btn:hover {
+  color: #fff;
+  background: #76c7ed;
   text-decoration: none;
 }
 
