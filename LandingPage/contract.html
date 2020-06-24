@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Coveree - Mon prix</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Dosis:300,400,500,,600,700,700i|Lato:300,300i,400,400i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/line-awesome/css/line-awesome.min.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Butterfly - v2.1.0
+  * Template URL: https://bootstrapmade.com/butterfly-free-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+      <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+      <!-- ======= Form Step bar ======= -->
+      <nav class="form-steps">
+        <div class="form-steps__item">
+          <div class="form-steps__item-content">
+            <span class="form-steps__item-icon">1</span>
+            <span class="form-steps__item-text">Vous</span>
+          </div>
+      
+        </div>
+        <div class="form-steps__item">
+          <div class="form-steps__item-content">
+            <span class="form-steps__item-icon">2</span>
+            <span class="form-steps__item-line"></span>
+            <span class="form-steps__item-text">Votre conduite</span>
+          </div>
+        </div>
+        <div class="form-steps__item">
+          <div class="form-steps__item-content">
+            <span class="form-steps__item-icon">3</span>
+            <span class="form-steps__item-line"></span>
+            <span class="form-steps__item-text">Votre véhicule</span>
+          </div>
+        </div>
+        <div class="form-steps__item">
+          <div class="form-steps__item-content">
+            <span class="form-steps__item-icon">4</span>
+            <span class="form-steps__item-line"></span>
+            <span class="form-steps__item-text">Votre prix</span>
+          </div>
+        </div>
+      </nav><!-- End Form Step bar -->
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Inner Page</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Inner Page</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="inner-page">
+      <div class="container">
+        <form id="regForm" action="">
+
+          <h1>Obtenir mon prix</h1>
+          
+          <!-- One "tab" for each step in the form: -->
+          <div class="tab">Vos informations:
+            <p><input placeholder="Prenom..." oninput="this.className = ''"></p>
+            <p><input placeholder="Nom..." oninput="this.className = ''"></p>
+            <p><input type="text" onblur="(this.type='text')" onfocus="(this.type='date')" placeholder="Date de naissance..." oninput="this.className = ''"></p>
+            <p><input placeholder="Adresse..." oninput="this.className = ''"></p>
+          </div>
+          
+          <div class="tab">Vos informations de conducteurs:
+            <p><input type="email" placeholder="E-mail..." oninput="this.className = ''"></p>
+          </div>
+          
+          <div class="tab">Le véhicule que vous souhaitez assurer:
+            <p><input type="number" placeholder="Année" oninput="this.className = ''"></p>
+            <p><input type="number" placeholder="Marque" oninput="this.className = ''"></p>
+            <p><input type="text" placeholder="Style carrosserie" oninput="this.className = ''"></p>
+            <p>
+              <select name="poss" id="pet-select">
+                <option value="">--Statut de la possetion du véhicule--</option>
+                <option value="comp">Comptant</option>
+                <option value="cred">Crédit en cours de paiement</option>
+                <option value="loca">Location</option>
+              </select>
+            </p>
+            <p>
+              <select name="anti" id="pet-select">
+                <option value="">--Dispositif antivol--</option>
+                <option value="alar">Alarme</option>
+                <option value="gps">Suivis GPS</option>
+                <option value="aucu">Aucun</option>
+              </select>
+            </p>
+            <div>
+              <input type="radio" id="yes" name="vtc" value="yes">
+              <label for="vtc">Oui</label>
+            </div>
+            
+            <div>
+              <input type="radio" id="no" name="vtc" value="no">
+              <label for="no">Non</label>
+            </div>
+          </div>
+          
+          <div style="overflow:auto;">
+            <div style="float:right;">
+              <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+              <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            </div>
+          </div>
+          </form> 
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4>Liens utiles</h4>
+              <ul>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#about">A propos</a></li>
+              </ul>
+            </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Nos réseaux sociaux</h4>
+            <p>Suivez nous dès maintenant sur nos réseaux sociaux et ne manquez plus un seul évenement Coveree</p>
+            <div class="social-links mt-3">
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="assets/vendor/counterup/counterup.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/contract.js"></script>
+
+</body>
+
+</html>
