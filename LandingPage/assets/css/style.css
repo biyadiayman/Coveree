@@ -1491,13 +1491,12 @@ input {
   padding: 10px;
   width: 100%;
   font-size: 17px;
-  font-family: Raleway;
   border: 1px solid #aaaaaa;
 }
 
 /* Mark input boxes that gets an error on validation: */
 input.invalid {
-  background-color: #ffdddd;
+  background-color: #fff;
 }
 
 /* Hide all steps by default: */
@@ -1542,8 +1541,6 @@ input.invalid {
 
 .inner-page button.sub {
   background: #fff;
-  border: 0;
-  padding: 10px 24px;
   color: #49b5e7;
   border: solid 1px;
   border-color: #49b5e7;
@@ -1647,6 +1644,7 @@ input.invalid {
 # Inner Page
 --------------------------------------------------------------*/
 .inner-page {
+  margin-top: 10%;
   background: #ffffff;
 }
 

@@ -13,12 +13,13 @@ function showTab(n) {
   }
   if (n == (x.length - 1)) {
     document.getElementById("nextBtn").innerHTML = "Soumettre";
-    document.getElementById("nextBtn").className = "sub";
+    document.getElementById("nextBtn").className += " sub";
   } else {
+    document.getElementById("nextBtn").className = document.getElementById("nextBtn").className.replace("sub", "");
     document.getElementById("nextBtn").innerHTML = "Suivant";
   }
   // ... and run a function that displays the correct step indicator:
-  fixStepIndicator(n)
+  fixStepIndicator(n);
 }
 
 function nextPrev(n) {
