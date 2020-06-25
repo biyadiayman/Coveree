@@ -48,6 +48,8 @@ function validateForm() {
   y = x[currentTab].getElementsByTagName("input");
   // A loop that checks every input field in the current tab:
   for (i = 0; i < y.length; i++) {
+    y[i].className = y[i].className.replace("valid", "");
+    y[i].className = y[i].className.replace("invalid", "");
     // If a field is empty...
     if (y[i].value == "") {
       // add an "invalid" class to the field:
@@ -56,9 +58,14 @@ function validateForm() {
       valid = false;
     }
     else if (!y[i].validity.valid) {
+      y[i].className = y[i].className.replace("valid", "");
       y[i].className += " invalid";
       // and set the current valid status to false:
       valid = false; 
+    }
+    else {
+      y[i].className = y[i].className.replace("invalid", "");
+      y[i].className += " valid";
     }
   }
   // If the valid status is true, mark the step as finished and valid:

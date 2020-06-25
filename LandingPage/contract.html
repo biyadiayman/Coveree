@@ -78,7 +78,7 @@
   <main id="main">
     <section class="inner-page">
       <div class="container">
-        <h1>Obtenir mon prix</h1>
+        <h1 style="font-weight: 600; text-transform: uppercase; margin-bottom: 5%">Obtenir mon prix</h1>
         <form>
           <div class="tab"> 
             <div class="form-group">
@@ -88,6 +88,17 @@
             <div class="form-group">
               <label for="iLname">Votre nom:</label>
               <input type="text" class="form-control" id="iLname" placeholder="Nom">
+            </div>
+            <div class="form-group">
+              <legend class="col-form-label">Genre (comme il apparait sur votre permis de conduire):</legend>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="genderF" value="genderF" checked>
+                <label class="form-check-label" for="genderF">Femme</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="genderM" value="genderM">
+                <label class="form-check-label" for="genderM">Homme</label>
+              </div>
             </div>
             <div class="form-group">
               <label for="iDob">Votre date de naissance:</label>
@@ -101,8 +112,72 @@
 
           <div class="tab">
             <div class="form-group">
-              <label for="iEmail">Votre adresse email:</label>
-              <input type="text" class="form-control" id="iEmail" placeholder="Email">
+              <label for="iMarit">Statut marital:</label>
+              <select class="form-control" id="iMarit">
+                <option>Ne souhaite pas répondre</option>
+                <option>Célibataire</option>
+                <option>Concubin</option>
+                <option>Divorcé</option>
+                <option>Marié</option>
+                <option>PACS</option>
+                <option>Veuf</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="iPermityear">Année d'obtention du permis:</label>
+              <input type="number" class="form-control" id="iPermityear" placeholder="Année d'obtention du permis">
+            </div>
+            <div class="form-group">
+              <legend class="col-form-label">Avez-vous été suspendus de permis durant les 3 dernières années ?</legend>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="suspended" id="suspendedY" value="suspendedY">
+                <label class="form-check-label" for="suspendedY">Oui</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="suspended" id="suspendedN" value="suspendedN" checked>
+                <label class="form-check-label" for="suspendedN">Non</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="iHighestEdu">Votre plus haut niveau d'éducation:</label>
+              <input type="text" class="form-control" id="iHighestEdu" placeholder="Master, Bts...">
+            </div>
+            <div class="form-group">
+              <legend class="col-form-label">Etes-vous propriétaire ?</legend>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="prop" id="propY" value="propY">
+                <label class="form-check-label" for="propY">Oui</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="prop" id="propN" value="propN" checked>
+                <label class="form-check-label" for="propN">Non</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <legend class="col-form-label">Etes-vous actuellement assuré ?</legend>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="assur" id="assurY" value="assurY">
+                <label class="form-check-label" for="assurY">Oui</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="assur" id="assurN" value="assurN" checked>
+                <label class="form-check-label" for="assurN">Non</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="iProf">Votre profession:</label>
+              <input type="text" class="form-control" id="iProf" placeholder="Profesion">
+            </div>
+            <div class="form-group">
+              <legend class="col-form-label">Avez-vous causé un accident durant les 5 dernières années ? (responsabilité même moindre)</legend>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="crash" id="crashY" value="crashY">
+                <label class="form-check-label" for="crashY">Oui</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="crash" id="crashN" value="crashN" checked>
+                <label class="form-check-label" for="crashN">Non</label>
+              </div>
             </div>
           </div>
 
@@ -148,13 +223,13 @@
               </div>
             </div>
             <div class="form-group">
-              <legend class="col-form-label">Utiliser le véhicule dans le cadre de VTC ?</legend>
+              <legend class="col-form-label">Utilisez vous le véhicule dans le cadre de VTC ?</legend>
               <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="vtc" id="vtcY" value="vtcY">
                 <label class="form-check-label" for="vtcY">Oui</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="vtc" id="vtcN" value="vtcN">
+                <input class="form-check-input" type="radio" name="vtc" id="vtcN" value="vtcN" checked>
                 <label class="form-check-label" for="vtcN">Non</label>
               </div>
             </div>
