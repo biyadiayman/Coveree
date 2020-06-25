@@ -1525,7 +1525,37 @@ input.invalid {
 /* Mark the steps that are finished and valid: */
 .step.finish {
   background-color: #4CAF50;
-} 
+}
+
+.inner-page button {
+  background: #49b5e7;
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
+.inner-page button:hover {
+  background: #1da2e0;
+}
+
+.inner-page button.sub {
+  background: #fff;
+  border: 0;
+  padding: 10px 24px;
+  color: #49b5e7;
+  border: solid 1px;
+  border-color: #49b5e7;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
+.inner-page button.sub:hover {
+  color: #1da2e0;
+  border-color: #1da2e0;
+}
+
 
 
 /*--------------------------------------------------------------
