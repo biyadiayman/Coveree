@@ -179,6 +179,21 @@
                 <label class="form-check-label" for="crashN">Non</label>
               </div>
             </div>
+            <div class="form-group">
+              <legend class="col-form-label">Avez-vous reçu un pv d'infraction durant les 10 dernières années ? (Hors pv de stationnement)</legend>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="pv" id="pvY" value="pvY" onclick="toggleOnPV();">
+                <label class="form-check-label" for="pvY">Oui</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="pv" id="pvN" value="pvN" onClick="toggleOffPV();" checked>
+                <label class="form-check-label" for="pvN">Non</label>
+              </div>
+            </div>
+            <div class="form-group hidden pv">
+              <label for="iNbPv">Entrez le nombre de PV sur les 10 dernières années:</label>
+              <input type="number" class="form-control" id="iNbPv" placeholder="Nombre de PV">
+            </div>
           </div>
 
           <div class="tab">

@@ -45,7 +45,7 @@ function validateForm() {
   // This function deals with validation of the form fields
   var x, y, i, valid = true;
   x = document.getElementsByClassName("tab");
-  y = x[currentTab].getElementsByTagName("input");
+  y = x[currentTab].querySelectorAll('div:not(.hidden) > input');;
   // A loop that checks every input field in the current tab:
   for (i = 0; i < y.length; i++) {
     y[i].className = y[i].className.replace("valid", "");
@@ -86,4 +86,20 @@ function fixStepIndicator(n) {
     x[n-1].className = x[n-1].className.replace("active", "completed");
     x[n].className += " form-steps__item--active";
   }
+}
+
+
+function toggleOnPV() {
+  console.log("On");
+  var x = document.querySelector('div.hidden.pv');
+  x.className = x.className.replace("hidden", "");
+}
+
+function toggleOffPV() {
+  console.log("Off");
+  var x = document.querySelector('div.pv');
+  if(x.className.search("hidden") == -1) {
+    x.className += " hidden";
+  }
+  x.querySelector("input").value = "";
 }
