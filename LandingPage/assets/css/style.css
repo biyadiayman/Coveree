@@ -1403,6 +1403,7 @@ section {
   margin-bottom: 1%;
   margin-top: 2%;
 }
+
 .form-steps:after {
   content: "";
   display: table;
@@ -1439,6 +1440,9 @@ section {
   color: #8191ab;
   font-weight: 500;
 }
+
+
+
 .form-steps__item-line {
   display: inline-block;
   height: 3px;
@@ -1622,6 +1626,11 @@ section {
 --------------------------------------------------------------*/
 .inner-page {
   margin-top: 8%;
+  background: #ffffff;
+}
+
+.inner-page.mobile-steps {
+  margin-top: 35%;
   background: #ffffff;
 }
 

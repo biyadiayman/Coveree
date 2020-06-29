@@ -1,6 +1,8 @@
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
 
+var mobile = false;
+
 function showTab(n) {
   // This function will display the specified tab of the form ...
   var x = document.getElementsByClassName("tab");
@@ -90,16 +92,49 @@ function fixStepIndicator(n) {
 
 
 function toggleOnPV() {
-  console.log("On");
   var x = document.querySelector('div.hidden.pv');
   x.className = x.className.replace("hidden", "");
 }
 
 function toggleOffPV() {
-  console.log("Off");
   var x = document.querySelector('div.pv');
   if(x.className.search("hidden") == -1) {
     x.className += " hidden";
   }
   x.querySelector("input").value = "";
 }
+
+function manageMobileDisplay() {
+  console.log("trigger");
+  if(window.innerWidth < 760) {
+    toggleMobileDisplayOn();
+    mobile = true;
+  }
+  else if(mobile && (window.innerWidth >= 760)) {
+    toggleMobileDisplayOff();
+    mobile = false;
+  }
+}
+
+function toggleMobileDisplayOn() {
+  console.log("On");
+  var x = document.querySelector('div.container');
+  if(x.className.search("flex-column") == -1) {
+    x.className += " flex-column";
+  }
+  var y = document.querySelector('section.inner-page');
+  if(y.className.search("mobile-steps") == -1) {
+    y.className += " mobile-steps";
+  }
+}
+
+function toggleMobileDisplayOff() {
+  console.log("Off");
+  var x = document.querySelector('div.container');
+  x.className = x.className.replace("flex-column","");
+  var y = document.querySelector('section.inner-page');
+  y.className = y.className.replace("mobile-steps","");
+}
+
+window.onload = manageMobileDisplay;
+window.onresize = manageMobileDisplay;
