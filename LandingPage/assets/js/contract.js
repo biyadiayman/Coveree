@@ -104,20 +104,43 @@ function toggleOffPV() {
   x.querySelector("input").value = "";
 }
 
+function toggleOffImm() {
+  var x = document.querySelectorAll('div.no-imm > div.hidden');
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace("hidden", "");
+  }
+  
+  var y = document.querySelector('div.imm');
+  if(y.className.search("hidden") == -1) {
+    y.className += " hidden";
+  }
+}
+
+function toggleOnImm() {
+  var x = document.querySelectorAll('div.no-imm > div');
+  for (i = 0; i < x.length; i++) {
+    if(x[i].className.search("hidden") == -1) {
+      x[i].className += " hidden";
+    }
+    x[i].value = "";
+  }
+  var y = document.querySelector('div.imm');
+  y.className = y.className.replace("hidden", "");
+
+}
+
 function manageMobileDisplay() {
-  console.log("trigger");
-  if(window.innerWidth < 760) {
+  if(window.innerWidth <= 760) {
     toggleMobileDisplayOn();
     mobile = true;
   }
-  else if(mobile && (window.innerWidth >= 760)) {
+  else if(mobile && (window.innerWidth > 760)) {
     toggleMobileDisplayOff();
     mobile = false;
   }
 }
 
 function toggleMobileDisplayOn() {
-  console.log("On");
   var x = document.querySelector('div.container');
   if(x.className.search("flex-column") == -1) {
     x.className += " flex-column";
@@ -129,7 +152,6 @@ function toggleMobileDisplayOn() {
 }
 
 function toggleMobileDisplayOff() {
-  console.log("Off");
   var x = document.querySelector('div.container');
   x.className = x.className.replace("flex-column","");
   var y = document.querySelector('section.inner-page');
