@@ -85,11 +85,11 @@
             <div class="form-group">
               <legend class="col-form-label">Connaissez-vous le numéro d'immatriculation du véhicule ?</legend>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="imm" id="immY" value="immY" checked onclick="toggleOnImm();">
+                <input class="form-check-input" type="radio" name="imm" id="immY" value="immY" checked>
                 <label class="form-check-label" for="immY">Oui</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="imm" id="immN" value="immN"  onclick="toggleOffImm();">
+                <input class="form-check-input" type="radio" name="imm" id="immN" value="immN"  >
                 <label class="form-check-label" for="immN">Non</label>
               </div>
             </div>
@@ -99,7 +99,7 @@
             </div>
             
             <div class="no-imm">
-              <div class="form-group  hidden">
+              <div id="hid1" class="form-group  hidden">
                 <label for="iVyear">Son année de fabrication:</label>
                 <input type="number" class="form-control" id="iVyear" placeholder="Année">
               </div>
@@ -254,15 +254,15 @@
             <div class="form-group">
               <legend class="col-form-label">Avez-vous reçu un pv d'infraction durant les 10 dernières années ? (Hors pv de stationnement)</legend>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="pv" id="pvY" value="pvY" onclick="toggleOnPV();">
+                <input class="form-check-input" type="radio" name="pv" id="pvY" value="pvY">
                 <label class="form-check-label" for="pvY">Oui</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="pv" id="pvN" value="pvN" onClick="toggleOffPV();" checked>
+                <input class="form-check-input" type="radio" name="pv" id="pvN" value="pvN" checked>
                 <label class="form-check-label" for="pvN">Non</label>
               </div>
             </div>
-            <div class="form-group hidden pv">
+            <div id="nbPvDiv" class="form-group hidden pv">
               <label for="iNbPv">Entrez le nombre de PV sur les 10 dernières années:</label>
               <input type="number" class="form-control" id="iNbPv" placeholder="Nombre de PV">
             </div>

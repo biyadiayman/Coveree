@@ -91,11 +91,13 @@ function fixStepIndicator(n) {
 }
 
 
+//Affiche l'input correspondant au nb de PV
 function toggleOnPV() {
   var x = document.querySelector('div.hidden.pv');
   x.className = x.className.replace("hidden", "");
 }
 
+//Masque l'input correspondant au nb de PV et reset la value de l'input
 function toggleOffPV() {
   var x = document.querySelector('div.pv');
   if(x.className.search("hidden") == -1) {
@@ -104,6 +106,7 @@ function toggleOffPV() {
   x.querySelector("input").value = "";
 }
 
+//Affiche les inputs lorsque l'utilisateur ne connait pas la plaque d'immatriculation 
 function toggleOffImm() {
   var x = document.querySelectorAll('div.no-imm > div.hidden');
   for (i = 0; i < x.length; i++) {
@@ -114,21 +117,29 @@ function toggleOffImm() {
   if(y.className.search("hidden") == -1) {
     y.className += " hidden";
   }
+  if(y.querySelector("input") != null) {
+    y.querySelector("input").value = "";
+  }
 }
 
+//Masque les inputs lorsque l'utilisateur ne connait pas la plaque d'immatriculation et reset leurs valeurs
 function toggleOnImm() {
   var x = document.querySelectorAll('div.no-imm > div');
   for (i = 0; i < x.length; i++) {
     if(x[i].className.search("hidden") == -1) {
       x[i].className += " hidden";
     }
-    x[i].value = "";
+
+    if(x[i].querySelector("input") != null) {
+      x[i].querySelector("input").value = "";
+    }
   }
   var y = document.querySelector('div.imm');
   y.className = y.className.replace("hidden", "");
 
 }
 
+//Met à jour le format d'affichage lorsque la fenètre est redimensionnée
 function manageMobileDisplay() {
   if(window.innerWidth <= 760) {
     toggleMobileDisplayOn();
@@ -140,6 +151,8 @@ function manageMobileDisplay() {
   }
 }
 
+
+//Active le mode d'affichage mobile de la bar de progression
 function toggleMobileDisplayOn() {
   var x = document.querySelector('div.container');
   if(x.className.search("flex-column") == -1) {
@@ -151,6 +164,7 @@ function toggleMobileDisplayOn() {
   }
 }
 
+//Désactive le mode d'affichage mobile de la bar de progression
 function toggleMobileDisplayOff() {
   var x = document.querySelector('div.container');
   x.className = x.className.replace("flex-column","");
@@ -160,3 +174,32 @@ function toggleMobileDisplayOff() {
 
 window.onload = manageMobileDisplay;
 window.onresize = manageMobileDisplay;
+
+
+$(function(){
+  $("#immN").click(function(){
+    $("div.no-imm > div").each(function() {
+      $( this ).slideDown();
+    });
+
+    $("div.imm").slideUp("");
+    $("div.imm > input").val("");
+  });
+
+  $("#immY").click(function(){
+    $("div.no-imm > div").each(function() {
+      $( this ).slideUp();
+      $( "div.no-imm > div > input" ).val("");
+    });
+    $("div.imm").slideDown();
+  });
+
+  $("#pvY").click(function(){
+    $("#nbPvDiv").slideDown();
+  });
+
+  $("#pvN").click(function(){
+    $("#nbPvDiv").slideUp();
+    $("#iNbPv").val("");
+  });
+});
