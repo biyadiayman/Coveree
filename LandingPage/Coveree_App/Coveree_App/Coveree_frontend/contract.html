@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Coveree - Mon prix</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Dosis:300,400,500,,600,700,700i|Lato:300,300i,400,400i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/line-awesome/css/line-awesome.min.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Butterfly - v2.1.0
+  * Template URL: https://bootstrapmade.com/butterfly-free-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center header">
+      <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid" style="margin-bottom: 10%; max-width: 150%;;"></a>
+      <!-- ======= Form Step bar ======= -->
+      <nav class="form-steps">
+        <div class="form-steps__item">
+          <div class="form-steps__item-content">
+            <span class="form-steps__item-icon">1</span>
+            <span class="form-steps__item-text">Vous</span>
+          </div>
+      
+        </div>
+        <div class="form-steps__item">
+          <div class="form-steps__item-content">
+            <span class="form-steps__item-icon">2</span>
+            <span class="form-steps__item-line"></span>
+            <span class="form-steps__item-text">Votre conduite</span>
+          </div>
+        </div>
+        <div class="form-steps__item">
+          <div class="form-steps__item-content">
+            <span class="form-steps__item-icon">3</span>
+            <span class="form-steps__item-line"></span>
+            <span class="form-steps__item-text">Votre véhicule</span>
+          </div>
+        </div>
+        <div class="form-steps__item">
+          <div class="form-steps__item-content">
+            <span class="form-steps__item-icon">4</span>
+            <span class="form-steps__item-line"></span>
+            <span class="form-steps__item-text">Votre prix</span>
+          </div>
+        </div>
+      </nav><!-- End Form Step bar -->
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+    <section class="inner-page">
+      <div class="container">
+        <h1 style="font-weight: 600; text-transform: uppercase; margin-bottom: 5%">Obtenir mon prix</h1>
+        <form>
+          <div class="tab"> 
+            <div class="form-group">
+              <label for="iFname">Votre prénom:</label>
+              <input type="text" class="form-control" id="iFname" placeholder="Prenom">
+            </div>
+            <div class="form-group">
+              <label for="iLname">Votre nom:</label>
+              <input type="text" class="form-control" id="iLname" placeholder="Nom">
+            </div>
+            <div class="form-group">
+              <legend class="col-form-label">Genre (comme il apparait sur votre permis de conduire):</legend>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="genderF" value="genderF" checked>
+                <label class="form-check-label" for="genderF">Femme</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="genderM" value="genderM">
+                <label class="form-check-label" for="genderM">Homme</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="iDob">Votre date de naissance:</label>
+              <input type="date" class="form-control" id="iDob" placeholder="Date de naissance">
+            </div>
+            <div class="form-group">
+              <label for="iAdd">Votre adresse:</label>
+              <input type="text" class="form-control" id="iAdd" placeholder="Adresse">
+            </div>
+          </div>
+
+          <div class="tab">
+            <div class="form-group">
+              <label for="iMarit">Statut marital:</label>
+              <select class="form-control" id="iMarit">
+                <option>Ne souhaite pas répondre</option>
+                <option>Célibataire</option>
+                <option>Concubin</option>
+                <option>Divorcé</option>
+                <option>Marié</option>
+                <option>PACS</option>
+                <option>Veuf</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="iPermityear">Année d'obtention du permis:</label>
+              <input type="number" class="form-control" id="iPermityear" placeholder="Année d'obtention du permis">
+            </div>
+            <div class="form-group">
+              <legend class="col-form-label">Avez-vous été suspendus de permis durant les 3 dernières années ?</legend>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="suspended" id="suspendedY" value="suspendedY">
+                <label class="form-check-label" for="suspendedY">Oui</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="suspended" id="suspendedN" value="suspendedN" checked>
+                <label class="form-check-label" for="suspendedN">Non</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="iHighestEdu">Votre plus haut niveau d'éducation:</label>
+              <input type="text" class="form-control" id="iHighestEdu" placeholder="Master, Bts...">
+            </div>
+            <div class="form-group">
+              <legend class="col-form-label">Etes-vous propriétaire ?</legend>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="prop" id="propY" value="propY">
+                <label class="form-check-label" for="propY">Oui</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="prop" id="propN" value="propN" checked>
+                <label class="form-check-label" for="propN">Non</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <legend class="col-form-label">Etes-vous actuellement assuré ?</legend>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="assur" id="assurY" value="assurY">
+                <label class="form-check-label" for="assurY">Oui</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="assur" id="assurN" value="assurN" checked>
+                <label class="form-check-label" for="assurN">Non</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="iProf">Votre profession:</label>
+              <input type="text" class="form-control" id="iProf" placeholder="Profesion">
+            </div>
+            <div class="form-group">
+              <legend class="col-form-label">Avez-vous causé un accident durant les 5 dernières années ? (responsabilité même moindre)</legend>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="crash" id="crashY" value="crashY">
+                <label class="form-check-label" for="crashY">Oui</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="crash" id="crashN" value="crashN" checked>
+                <label class="form-check-label" for="crashN">Non</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <legend class="col-form-label">Avez-vous reçu un pv d'infraction durant les 10 dernières années ? (Hors pv de stationnement)</legend>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="pv" id="pvY" value="pvY" onclick="toggleOnPV();">
+                <label class="form-check-label" for="pvY">Oui</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="pv" id="pvN" value="pvN" onClick="toggleOffPV();" checked>
+                <label class="form-check-label" for="pvN">Non</label>
+              </div>
+            </div>
+            <div class="form-group hidden pv">
+              <label for="iNbPv">Entrez le nombre de PV sur les 10 dernières années:</label>
+              <input type="number" class="form-control" id="iNbPv" placeholder="Nombre de PV">
+            </div>
+          </div>
+
+          <div class="tab">
+            <h3>Le véhicule que vous souhaitez assurer:</h3>
+            <div class="form-group">
+              <label for="iVyear">Son année de fabrication:</label>
+              <input type="number" class="form-control" id="iVyear" placeholder="Année">
+            </div>
+            <div class="form-group">
+              <label for="iVbrand">Sa marque:</label>
+              <input type="text" class="form-control" id="iVbrand" placeholder="Marque">
+            </div>
+            <div class="form-group">
+              <label for="iVcarr">Le style de sa carrosserie:</label>
+              <input type="text" class="form-control" id="iVcarr" placeholder="4x4, Berline...">
+            </div>
+            <div class="form-group">
+              <label for="iVposs">Statut de possetion du véhicule</label>
+              <select class="form-control" id="iVposs">
+                <option>Comptant</option>
+                <option>Crédit en cours de paiement</option>
+                <option>Location</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <legend class="col-form-label">Fonctionnalités d'antivol:</legend>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="iValrm" value="alrm">
+                <label class="form-check-label" for="iValrm">Alarme</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="iVact" value="act">
+                <label class="form-check-label" for="iVact">Active Disable</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="iVpass" value="pass">
+                <label class="form-check-label" for="iVpass">Passive Stable</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="iVtack" value="track">
+                <label class="form-check-label" for="iVtrack">Suivis GPS</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <legend class="col-form-label">Utilisez vous le véhicule dans le cadre de VTC ?</legend>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="vtc" id="vtcY" value="vtcY">
+                <label class="form-check-label" for="vtcY">Oui</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="vtc" id="vtcN" value="vtcN" checked>
+                <label class="form-check-label" for="vtcN">Non</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <button type="button" id="prevBtn" class="btn btn-primary" onclick="nextPrev(-1)">Précédent</button>
+            <button type="button" id="nextBtn" class="btn btn-primary" onclick="nextPrev(1)">Suivant</button>
+          </div>
+        </form>
+      </div>
+      
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4>Liens utiles</h4>
+              <ul>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#about">A propos</a></li>
+              </ul>
+            </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Nos réseaux sociaux</h4>
+            <p>Suivez nous dès maintenant sur nos réseaux sociaux et ne manquez plus un seul évenement Coveree</p>
+            <div class="social-links mt-3">
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="assets/vendor/counterup/counterup.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/contract.js"></script>
+
+</body>
+
+</html>
