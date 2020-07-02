@@ -47,7 +47,7 @@ function validateForm() {
   // This function deals with validation of the form fields
   var x, y, i, valid = true;
   x = document.getElementsByClassName("tab");
-  y = x[currentTab].querySelectorAll('div:not(.hidden) > input');;
+  y = x[currentTab].querySelectorAll('div:not(.hidden) > div:not(.hidden) > input');;
   // A loop that checks every input field in the current tab:
   for (i = 0; i < y.length; i++) {
     y[i].className = y[i].className.replace("valid", "");
@@ -90,55 +90,6 @@ function fixStepIndicator(n) {
   }
 }
 
-
-//Affiche l'input correspondant au nb de PV
-function toggleOnPV() {
-  var x = document.querySelector('div.hidden.pv');
-  x.className = x.className.replace("hidden", "");
-}
-
-//Masque l'input correspondant au nb de PV et reset la value de l'input
-function toggleOffPV() {
-  var x = document.querySelector('div.pv');
-  if(x.className.search("hidden") == -1) {
-    x.className += " hidden";
-  }
-  x.querySelector("input").value = "";
-}
-
-//Affiche les inputs lorsque l'utilisateur ne connait pas la plaque d'immatriculation 
-function toggleOffImm() {
-  var x = document.querySelectorAll('div.no-imm > div.hidden');
-  for (i = 0; i < x.length; i++) {
-    x[i].className = x[i].className.replace("hidden", "");
-  }
-  
-  var y = document.querySelector('div.imm');
-  if(y.className.search("hidden") == -1) {
-    y.className += " hidden";
-  }
-  if(y.querySelector("input") != null) {
-    y.querySelector("input").value = "";
-  }
-}
-
-//Masque les inputs lorsque l'utilisateur ne connait pas la plaque d'immatriculation et reset leurs valeurs
-function toggleOnImm() {
-  var x = document.querySelectorAll('div.no-imm > div');
-  for (i = 0; i < x.length; i++) {
-    if(x[i].className.search("hidden") == -1) {
-      x[i].className += " hidden";
-    }
-
-    if(x[i].querySelector("input") != null) {
-      x[i].querySelector("input").value = "";
-    }
-  }
-  var y = document.querySelector('div.imm');
-  y.className = y.className.replace("hidden", "");
-
-}
-
 //Met à jour le format d'affichage lorsque la fenètre est redimensionnée
 function manageMobileDisplay() {
   if(window.innerWidth <= 760) {
@@ -178,28 +129,52 @@ window.onresize = manageMobileDisplay;
 
 $(function(){
   $("#immN").click(function(){
-    $("div.no-imm > div").each(function() {
-      $( this ).slideDown();
-    });
+    $("div.no-imm").slideDown();
+    $("div.no-imm").removeClass("hidden");
+
 
     $("div.imm").slideUp("");
+    $("div.imm").addClass("hidden");
     $("div.imm > input").val("");
   });
 
   $("#immY").click(function(){
+    $("div.no-imm").slideUp();
+    $("div.no-imm").addClass("hidden");
     $("div.no-imm > div").each(function() {
-      $( this ).slideUp();
       $( "div.no-imm > div > input" ).val("");
     });
+
     $("div.imm").slideDown();
+    $("div.imm").removeClass("hidden");
   });
 
   $("#pvY").click(function(){
     $("#nbPvDiv").slideDown();
+    $("#nbPvDiv").removeClass("hidden");
   });
 
   $("#pvN").click(function(){
     $("#nbPvDiv").slideUp();
     $("#iNbPv").val("");
+    $("#nbPvDiv").addClass("hidden");
   });
+
+  //Fonction pour afficher les bons input quand rechargement au milieu du remplissage du form
+  $( document ).ready(function() {
+    if($("#pvY").is(":checked")) {
+      $("#nbPvDiv").prop("style", "");
+      $("#nbPvDiv").removeClass("hidden");
+    }
+
+    if($("#immN").is(":checked")) {
+      $("div.no-imm").prop("style", "");
+      $("div.no-imm").removeClass("hidden");
+  
+  
+      $("div.imm").prop("style", "display: none;");
+      $("div.imm").addClass("hidden");
+      $("div.imm > input").val("");
+    }
+});
 });
