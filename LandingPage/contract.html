@@ -75,11 +75,14 @@
     </div>
   </header><!-- End Header -->
 
-  <main id="main">
+  <!-- ====== Main ====== -->
+  <main id="main"> 
     <section class="inner-page">
       <div class="container">
         <h1 style="font-weight: 600; text-transform: uppercase; margin-bottom: 5%">Obtenir mon prix</h1>
+        <!-- ====== Form Start ====== -->
         <form>
+          <!-- ====== Vehicule Tab ====== -->
           <div class="tab">
             <h3>Le véhicule que vous souhaitez assurer:</h3>
             <div class="form-group">
@@ -150,8 +153,9 @@
                 <label class="form-check-label" for="vtcN">Non</label>
               </div>
             </div>
-          </div>
+          </div><!-- End Vehicule Tab -->
 
+          <!-- ====== Customer Infos Tab ====== -->
           <div class="tab"> 
             <div class="form-group">
               <label for="iFname">Votre prénom:</label>
@@ -180,8 +184,9 @@
               <label for="iAdd">Votre adresse:</label>
               <input type="text" class="form-control" id="iAdd" placeholder="Adresse">
             </div>
-          </div>
+          </div><!-- End Customer Infos Tab -->
 
+          <!-- ====== Driver Licence Tab ====== -->
           <div class="tab">
             <div class="form-group">
               <label for="iMarit">Statut marital:</label>
@@ -266,107 +271,80 @@
               <label for="iNbPv">Entrez le nombre de PV sur les 10 dernières années:</label>
               <input type="number" class="form-control" id="iNbPv" placeholder="Nombre de PV">
             </div>
-          </div>
+          </div><!-- End Driver Licence Tab -->
 
+          <!-- ====== Price Tab ====== -->
           <div class="tab">
-            <div id="generic_price_table">   
+            <div id="price_table">   
               <section>
-                      <div class="container" id="frame">
-                          <!--BLOCK ROW START-->
-                                <!--PRICE CONTENT START-->
-                                  <div class="generic_content active clearfix">
-                                      
-                                      <!--HEAD PRICE DETAIL START-->
-                                      <div class="generic_head_price clearfix">
-                                      
-                                          <!--HEAD CONTENT START-->
-                                          <div class="generic_head_content clearfix">
-                                          
-                                            <!--HEAD START-->
-                                              <div class="head_bg"></div>
-                                              <div class="head">
-                                                  <span>Votre Prix</span>
-                                              </div>
-                                              <!--//HEAD END-->
-                                              
-                                          </div>
-                                          <!--//HEAD CONTENT END-->
-                                          
-                                          <!--PRICE START-->
-                                          <div class="generic_price_tag clearfix">	
-                                              <span class="price">
-                                                  <span class="currency">200</span>
-                                                  <span class="cent">.99</span>
-                                                  <span class="sign">€</span>
-                                                  <span class="month">/MOIS</span>
-                                              </span>
-                                          </div>
-                                          <!--//PRICE END-->
-                                          
-                                      </div>                            
-                                      <!--//HEAD PRICE DETAIL END-->
-                                      
-                                      <!--FEATURE LIST START-->
-                                      <div class="container generic_feature_list">
-                                        <div class="row">
-                                          <div class="col-sm">
-                                            <div class="card">
-                                              <div class="card-body">
-                                                <h5 class="card-title">Tiers payant</h5>
-                                                <h6 class="card-title">Couverture</h6>
-                                                <select class="custom-select">
-                                                  <option selected>Open this select menu</option>
-                                                  <option value="1">One</option>
-                                                  <option value="2">Two</option>
-                                                  <option value="3">Three</option>
-                                                </select>
-                                              </div>
-                                            </div>
-                                          </div>
-                                          <div class="col-sm">
-                                            Couverture obligatoire
-                                          </div>
-                                          <div class="col-sm">
-                                            Couverture obligatoire
-                                          </div>
-                                        </div>
-                                        <div class="row">
-                                          <div class="col-sm">
-                                            Couverture optionelle
-                                          </div>
-                                          <div class="col-sm">
-                                            Couverture optionelle
-                                          </div>
-                                          <div class="col-sm">
-                                            Couverture optionelle
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <!--//FEATURE LIST END-->
-                                      
-                                      <!--BUTTON START-->
-                                      <div class="generic_price_btn clearfix">
-                                        <a class="" href="">Obtenir un contrat</a>
-                                      </div>
-                                      <!--//BUTTON END-->
-                                      
-                                  </div>
-                                  <!--//PRICE CONTENT END-->
-                          
+                <div class="container" id="frame">
+                   <div class="content active clearfix">
+                     <div class="head_price clearfix">               
+                       <div class="head_content clearfix">
+                        <div class="head_bg"></div>
+                        <div class="head">
+                          <span>Votre Prix</span>
+                        </div>
                       </div>
-                  </section>             
-              </div>
-          </div>
-
+                      <div class="price_tag clearfix">	
+                        <span class="price">
+                          <span class="currency">200</span>
+                          <span class="cent">.99</span>
+                          <span class="sign">€</span>
+                          <span class="month">/MOIS</span>
+                        </span>
+                      </div>      
+                    </div>                            
+                    <div class="container coverage_list">
+                      <div class="row">
+                        <div class="col-sm">
+                          <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title">Tiers payant</h5>
+                                <h6 class="card-title">Couverture</h6>
+                                  <select class="custom-select">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                  </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm">
+                          Couverture obligatoire
+                        </div>
+                        <div class="col-sm">
+                          Couverture obligatoire
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm">
+                          Couverture optionelle
+                        </div>
+                        <div class="col-sm">
+                          Couverture optionelle
+                        </div>
+                        <div class="col-sm">
+                          Couverture optionelle
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price_btn clearfix">
+                      <a class="" href="">Obtenir un contrat</a>
+                    </div>
+                  </div>
+                </div>
+              </section>             
+            </div>
+          </div><!-- End Price Tab -->
           <div class="form-group">
             <button type="button" id="prevBtn" class="btn btn-primary" onclick="nextPrev(-1)">Précédent</button>
             <button type="button" id="nextBtn" class="btn btn-primary" onclick="nextPrev(1)">Suivant</button>
           </div>
-        </form>
-      </div>
-      
+        </form><!-- End Form -->
+      </div>  
     </section>
-
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->

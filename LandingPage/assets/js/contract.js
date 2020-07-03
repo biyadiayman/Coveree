@@ -1,13 +1,15 @@
-var currentTab = 0; // Current tab is set to be the first tab (0)
-showTab(currentTab); // Display the current tab
+var currentTab = 0; // Variable indiquant l'étape de formulaire courante
+showTab(currentTab); // Affiche le tab courant
 
 var mobile = false;
 
+
+//Affiche le n-em tab
 function showTab(n) {
-  // This function will display the specified tab of the form ...
   var x = document.getElementsByClassName("tab");
   x[n].style.display = "block";
-  // ... and fix the Previous/Next buttons:
+
+  //Fix les boutons de bas de formulaire en fonction du tab
   if (n == 0) {
     document.getElementById("prevBtn").style.display = "none";
   } else {
@@ -20,49 +22,48 @@ function showTab(n) {
     document.getElementById("nextBtn").className = document.getElementById("nextBtn").className.replace("sub", "");
     document.getElementById("nextBtn").innerHTML = "Suivant";
   }
-  // ... and run a function that displays the correct step indicator:
+
   fixStepIndicator(n);
 }
 
+// Fonction qui met à jour les variables pour suivre le tab courant
 function nextPrev(n) {
-  // This function will figure out which tab to display
+
   var x = document.getElementsByClassName("tab");
-  // Exit the function if any field in the current tab is invalid:
+  // Si un des champs est invalid on exit
   if (n == 1 && !validateForm()) return false;
-  // Hide the current tab:
+
   x[currentTab].style.display = "none";
-  // Increase or decrease the current tab by 1:
   currentTab = currentTab + n;
-  // if you have reached the end of the form... :
+
   if (currentTab >= x.length) {
-    //...the form gets submitted:
+
     document.getElementById("regForm").submit();
     return false;
   }
-  // Otherwise, display the correct tab:
+
   showTab(currentTab);
 }
 
+  // Fonction de validation des champs du formulaire, l'attribut valid ou invalid détermine si le champs est bon ou non
 function validateForm() {
-  // This function deals with validation of the form fields
   var x, y, i, valid = true;
   x = document.getElementsByClassName("tab");
+  //On sélectionne ici uniquement les inputs qui ne sont pas dans une division cachée
   y = x[currentTab].querySelectorAll('div:not(.hidden) > div:not(.hidden) > input');;
-  // A loop that checks every input field in the current tab:
+
   for (i = 0; i < y.length; i++) {
     y[i].className = y[i].className.replace("valid", "");
     y[i].className = y[i].className.replace("invalid", "");
-    // If a field is empty...
+
     if (y[i].value == "") {
-      // add an "invalid" class to the field:
+
       y[i].className += " invalid";
-      // and set the current valid status to false:
       valid = false;
     }
     else if (!y[i].validity.valid) {
       y[i].className = y[i].className.replace("valid", "");
       y[i].className += " invalid";
-      // and set the current valid status to false:
       valid = false; 
     }
     else {
@@ -70,15 +71,12 @@ function validateForm() {
       y[i].className += " valid";
     }
   }
-  // If the valid status is true, mark the step as finished and valid:
-  //if (valid) {
-  //  document.getElementsByClassName("step")[currentTab].className += " finish";
-  //}
-  return valid; // return the valid status
+
+  return valid;
 }
 
+// Fonction qui gère la maj de la barre de progression
 function fixStepIndicator(n) {
-  // This function removes the "active" class of all steps...
   x = document.getElementsByClassName("form-steps__item");
 
   if(n === 0) {
@@ -126,8 +124,12 @@ function toggleMobileDisplayOff() {
 window.onload = manageMobileDisplay;
 window.onresize = manageMobileDisplay;
 
-
+//jQuerry
 $(function(){
+
+  //La class hidden permet au vérificateur de formulaire d'ignorer la validité du champs caché
+  //2 fonctions pour afficher ou non les bons inputs en fonction de si l'utilisateur connait ou non la plaque d'immatriculation
+  //On reset les valeurs des champs qu'on cache
   $("#immN").click(function(){
     $("div.no-imm").slideDown();
     $("div.no-imm").removeClass("hidden");
@@ -149,6 +151,8 @@ $(function(){
     $("div.imm").removeClass("hidden");
   });
 
+  //2 fonctions pour afficher ou non les bons inputs en fonction de si l'utilisateur à eu ou non des PV dans les 10 dernières années
+  //On reset les valeurs des champs qu'on cache
   $("#pvY").click(function(){
     $("#nbPvDiv").slideDown();
     $("#nbPvDiv").removeClass("hidden");
@@ -160,13 +164,15 @@ $(function(){
     $("#nbPvDiv").addClass("hidden");
   });
 
-  //Fonction pour afficher les bons input quand rechargement au milieu du remplissage du form
+  //Affiche les bons input au chargement de la page, dans le cas ou elle à été rechargé prématurément
   $( document ).ready(function() {
+    //Partie PV sur 10 ans
     if($("#pvY").is(":checked")) {
       $("#nbPvDiv").prop("style", "");
       $("#nbPvDiv").removeClass("hidden");
     }
 
+    //Partie conaissance de la plaque d'immatriculation
     if($("#immN").is(":checked")) {
       $("div.no-imm").prop("style", "");
       $("div.no-imm").removeClass("hidden");
