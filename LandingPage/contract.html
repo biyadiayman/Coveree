@@ -274,7 +274,7 @@
           </div><!-- End Driver Licence Tab -->
 
           <!-- ====== Price Tab ====== -->
-          <div class="tab">
+          <div class="tab price_table">
             <div id="price_table">   
               <section>
                 <div class="container" id="frame">
@@ -298,10 +298,10 @@
                     <div class="container coverage_list">
                       <div class="row">
                         <div class="col-sm">
-                          <div class="card">
+                          <div class="card" id="tiers">
                             <div class="card-body">
                               <h5 class="card-title">Tiers payant</h5>
-                                <h6 class="card-title">Couverture</h6>
+                                <h6 class="card-title">Obligatoire</h6>
                                   <select class="custom-select">
                                     <option selected>Open this select menu</option>
                                     <option value="1">One</option>
@@ -312,7 +312,31 @@
                           </div>
                         </div>
                         <div class="col-sm">
-                          Couverture obligatoire
+                          <div class="card" id="ttriskCard">
+                            <div class="card-body">
+                              <div class="container">
+                                <div class="row">
+                                  <div class="col left">
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="" id="ttriskCheck">
+                                      <label class="form-check-label" for="defaultCheck1"></label>
+                                    </div>
+                                  </div>
+                                  <div class="col right">
+                                    <div class="icon"><i class="bx bx-question-mark"></i></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <h5 class="card-title">Assurance tout risque</h5>
+                                <h6 class="card-title">Optionnelle</h6>
+                                  <select class="custom-select" id="ttriskSelect" disabled="true">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                  </select>
+                            </div>
+                          </div>
                         </div>
                         <div class="col-sm">
                           Couverture obligatoire

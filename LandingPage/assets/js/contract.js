@@ -182,6 +182,16 @@ $(function(){
       $("div.imm").addClass("hidden");
       $("div.imm > input").val("");
     }
+  });
+
+  $('#ttriskCheck').on('change',function(e) {
+    if ($(this).prop('checked')) {
+        $("#ttriskCard").addClass("checked");
+        $("#ttriskSelect").prop("disabled", false);
+    } else {
+        $("#ttriskCard").removeClass("checked");
+        $("#ttriskSelect").prop("disabled", true);
+    };
 });
 });
 
