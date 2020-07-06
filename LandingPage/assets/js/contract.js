@@ -15,12 +15,22 @@ function showTab(n) {
   } else {
     document.getElementById("prevBtn").style.display = "inline";
   }
-  if (n == (x.length - 1)) {
+  if (n == (x.length - 2)) {
     document.getElementById("nextBtn").innerHTML = "Soumettre";
     document.getElementById("nextBtn").className += " sub";
-  } else {
+  }
+  else {
     document.getElementById("nextBtn").className = document.getElementById("nextBtn").className.replace("sub", "");
     document.getElementById("nextBtn").innerHTML = "Suivant";
+  } 
+  
+  if(n == (x.length - 1)) {
+    document.getElementById("bigTitle").style.display = "none";
+    document.getElementById("nextBtn").style.display = "none";
+  }
+  else {
+    document.getElementById("bigTitle").style.display = "block";
+    document.getElementById("nextBtn").style.display = "inline";
   }
 
   fixStepIndicator(n);
@@ -181,6 +191,12 @@ $(function(){
       $("div.imm").prop("style", "display: none;");
       $("div.imm").addClass("hidden");
       $("div.imm > input").val("");
+    }
+
+    //Partie couvertures page des prix
+    if($("#ttriskCheck").is(":checked")) {
+      $("#ttriskCard").addClass("checked");
+      $("#ttriskSelect").prop("disabled", false);
     }
   });
 
