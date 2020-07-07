@@ -38,15 +38,15 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
+  <header id="header" class="fixed-top" style="padding-top: 5px;padding-bottom: 0px;">
     <div class="container d-flex align-items-center header">
-      <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid" style="margin-bottom: 10%; max-width: 150%;;"></a>
+      <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid" style="margin-bottom: 10%; max-width: 150%; margin-top: 10%"></a>
       <!-- ======= Form Step bar ======= -->
       <nav class="form-steps">
         <div class="form-steps__item">
           <div class="form-steps__item-content">
             <span class="form-steps__item-icon">1</span>
-            <span class="form-steps__item-text">Vous</span>
+            <span class="form-steps__item-text">Votre véhicule</span>
           </div>
       
         </div>
@@ -54,14 +54,14 @@
           <div class="form-steps__item-content">
             <span class="form-steps__item-icon">2</span>
             <span class="form-steps__item-line"></span>
-            <span class="form-steps__item-text">Votre conduite</span>
+            <span class="form-steps__item-text">Vous</span>
           </div>
         </div>
         <div class="form-steps__item">
           <div class="form-steps__item-content">
             <span class="form-steps__item-icon">3</span>
             <span class="form-steps__item-line"></span>
-            <span class="form-steps__item-text">Votre véhicule</span>
+            <span class="form-steps__item-text">Votre conduite</span>
           </div>
         </div>
         <div class="form-steps__item">
@@ -75,11 +75,87 @@
     </div>
   </header><!-- End Header -->
 
-  <main id="main">
+  <!-- ====== Main ====== -->
+  <main id="main"> 
     <section class="inner-page">
       <div class="container">
-        <h1 style="font-weight: 600; text-transform: uppercase; margin-bottom: 5%">Obtenir mon prix</h1>
+        <h1 style="font-weight: 600; text-transform: uppercase; margin-bottom: 5%" id="bigTitle">Obtenir mon prix</h1>
+        <!-- ====== Form Start ====== -->
         <form>
+          <!-- ====== Vehicule Tab ====== -->
+          <div class="tab">
+            <h3>Le véhicule que vous souhaitez assurer:</h3>
+            <div class="form-group">
+              <legend class="col-form-label">Connaissez-vous le numéro d'immatriculation du véhicule ?</legend>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="imm" id="immY" value="immY" checked>
+                <label class="form-check-label" for="immY">Oui</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="imm" id="immN" value="immN"  >
+                <label class="form-check-label" for="immN">Non</label>
+              </div>
+            </div>
+            <div class="form-group imm">
+              <label for="iVimm">Numéro d'immatriculation</label>
+              <input type="text" class="form-control" id="iVimm" placeholder="Numéro d'immatriculation">
+            </div>
+            
+            <div class="no-imm hidden"  style="display: none;">
+              <div id="hid1" class="form-group">
+                <label for="iVyear">Son année de fabrication:</label>
+                <input type="number" class="form-control" id="iVyear" placeholder="Année">
+              </div>
+              <div class="form-group">
+                <label for="iVbrand">Sa marque:</label>
+                <input type="text" class="form-control" id="iVbrand" placeholder="Marque">
+              </div>
+              <div class="form-group">
+                <label for="iVcarr">Le style de sa carrosserie:</label>
+                <input type="text" class="form-control" id="iVcarr" placeholder="4x4, Berline...">
+              </div>
+              <div class="form-group">
+                <label for="iVposs">Statut de possetion du véhicule</label>
+                <select class="form-control" id="iVposs">
+                  <option>Comptant</option>
+                  <option>Crédit en cours de paiement</option>
+                  <option>Location</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <legend class="col-form-label">Fonctionnalités d'antivol:</legend>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="iValrm" value="alrm">
+                <label class="form-check-label" for="iValrm">Alarme</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="iVact" value="act">
+                <label class="form-check-label" for="iVact">Active Disable</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="iVpass" value="pass">
+                <label class="form-check-label" for="iVpass">Passive Stable</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="iVtack" value="track">
+                <label class="form-check-label" for="iVtrack">Suivis GPS</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <legend class="col-form-label">Utilisez vous le véhicule dans le cadre de VTC ?</legend>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="vtc" id="vtcY" value="vtcY">
+                <label class="form-check-label" for="vtcY">Oui</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="vtc" id="vtcN" value="vtcN" checked>
+                <label class="form-check-label" for="vtcN">Non</label>
+              </div>
+            </div>
+          </div><!-- End Vehicule Tab -->
+
+          <!-- ====== Customer Infos Tab ====== -->
           <div class="tab"> 
             <div class="form-group">
               <label for="iFname">Votre prénom:</label>
@@ -108,8 +184,9 @@
               <label for="iAdd">Votre adresse:</label>
               <input type="text" class="form-control" id="iAdd" placeholder="Adresse">
             </div>
-          </div>
+          </div><!-- End Customer Infos Tab -->
 
+          <!-- ====== Driver Licence Tab ====== -->
           <div class="tab">
             <div class="form-group">
               <label for="iMarit">Statut marital:</label>
@@ -166,7 +243,7 @@
             </div>
             <div class="form-group">
               <label for="iProf">Votre profession:</label>
-              <input type="text" class="form-control" id="iProf" placeholder="Profesion">
+              <input type="text" class="form-control" id="iProf" placeholder="Profession">
             </div>
             <div class="form-group">
               <legend class="col-form-label">Avez-vous causé un accident durant les 5 dernières années ? (responsabilité même moindre)</legend>
@@ -182,83 +259,172 @@
             <div class="form-group">
               <legend class="col-form-label">Avez-vous reçu un pv d'infraction durant les 10 dernières années ? (Hors pv de stationnement)</legend>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="pv" id="pvY" value="pvY" onclick="toggleOnPV();">
+                <input class="form-check-input" type="radio" name="pv" id="pvY" value="pvY">
                 <label class="form-check-label" for="pvY">Oui</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="pv" id="pvN" value="pvN" onClick="toggleOffPV();" checked>
+                <input class="form-check-input" type="radio" name="pv" id="pvN" value="pvN" checked>
                 <label class="form-check-label" for="pvN">Non</label>
               </div>
             </div>
-            <div class="form-group hidden pv">
+            <div id="nbPvDiv" class="form-group hidden pv" style="display: none;">
               <label for="iNbPv">Entrez le nombre de PV sur les 10 dernières années:</label>
               <input type="number" class="form-control" id="iNbPv" placeholder="Nombre de PV">
             </div>
-          </div>
+          </div><!-- End Driver Licence Tab -->
 
-          <div class="tab">
-            <h3>Le véhicule que vous souhaitez assurer:</h3>
-            <div class="form-group">
-              <label for="iVyear">Son année de fabrication:</label>
-              <input type="number" class="form-control" id="iVyear" placeholder="Année">
-            </div>
-            <div class="form-group">
-              <label for="iVbrand">Sa marque:</label>
-              <input type="text" class="form-control" id="iVbrand" placeholder="Marque">
-            </div>
-            <div class="form-group">
-              <label for="iVcarr">Le style de sa carrosserie:</label>
-              <input type="text" class="form-control" id="iVcarr" placeholder="4x4, Berline...">
-            </div>
-            <div class="form-group">
-              <label for="iVposs">Statut de possetion du véhicule</label>
-              <select class="form-control" id="iVposs">
-                <option>Comptant</option>
-                <option>Crédit en cours de paiement</option>
-                <option>Location</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <legend class="col-form-label">Fonctionnalités d'antivol:</legend>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="iValrm" value="alrm">
-                <label class="form-check-label" for="iValrm">Alarme</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="iVact" value="act">
-                <label class="form-check-label" for="iVact">Active Disable</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="iVpass" value="pass">
-                <label class="form-check-label" for="iVpass">Passive Stable</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="iVtack" value="track">
-                <label class="form-check-label" for="iVtrack">Suivis GPS</label>
-              </div>
-            </div>
-            <div class="form-group">
-              <legend class="col-form-label">Utilisez vous le véhicule dans le cadre de VTC ?</legend>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="vtc" id="vtcY" value="vtcY">
-                <label class="form-check-label" for="vtcY">Oui</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="vtc" id="vtcN" value="vtcN" checked>
-                <label class="form-check-label" for="vtcN">Non</label>
-              </div>
-            </div>
-          </div>
+          <!-- ====== Price Tab ====== -->
+          <div class="tab price_table">
+            <div id="price_table">   
+              <section>
+                <div class="container" id="frame">
+                   <div class="content active clearfix">
+                     <div class="head_price clearfix">               
+                       <div class="head_content clearfix">
+                        <div class="head_bg"></div>
+                        <div class="head">
+                          <span>Votre Prix</span>
+                        </div>
+                      </div>
+                      <div class="price_tag clearfix">	
+                        <span class="price">
+                          <span class="currency">200</span>
+                          <span class="cent">.99</span>
+                          <span class="sign">€</span>
+                          <span class="month">/MOIS</span>
+                        </span>
+                      </div>      
+                    </div>                            
+                    <div class="container coverage_list">
+                      <div class="row">
+                        <div class="col-sm">
+                          <div class="card checked" id="tiersCard">
+                            <div class="card-body">
+                              <div class="container">
+                                <div class="row">
+                                  <div class="col left">
 
+                                  </div>
+                                  <div class="col-10 middle">
+                                    <h5 class="card-title">Tiers payant</h5>
+                                  </div>
+                                  <div class="col right">
+                                    <div class="icon" id="tiersInfos"><a href="#tiersCardInfos" class="scrollto"><i class="bx bx-question-mark" ></i></a></div>
+                                  </div>
+                                </div>
+                              </div>
+                                <h6 class="card-title">Obligatoire</h6>
+                                  <select class="custom-select" id="tiersSelect">
+                                    <option selected>Couverture</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                  </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm">
+                          <div class="card" id="ttriskCard">
+                            <div class="card-body">
+                              <div class="container">
+                                <div class="row">
+                                  <div class="col left">
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="" id="ttriskCheck">
+                                      <label class="form-check-label" for="defaultCheck1"></label>
+                                    </div>
+                                  </div>
+                                  <div class="col-10 middle">
+                                    <h5 class="card-title">Tout risques</h5>
+                                  </div>
+                                  <div class="col right">
+                                    <div class="icon" id="ttriskInfos"><a href="#ttriskCardInfos" class="scrollto"><i class="bx bx-question-mark" ></i></a></div>
+                                  </div>
+                                </div>
+                              </div>
+                                <h6 class="card-title">Optionnelle</h6>
+                                  <select class="custom-select" id="ttriskSelect" disabled="true">
+                                    <option selected>Couverture</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                  </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm">
+                          Couverture obligatoire
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm">
+                          Couverture optionelle
+                        </div>
+                        <div class="col-sm">
+                          Couverture optionelle
+                        </div>
+                        <div class="col-sm">
+                          Couverture optionelle
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price_btn clearfix">
+                      <a class="" href="">Obtenir un contrat</a>
+                    </div>
+                  </div>
+                </div>
+              </section>             
+            </div>
+
+            <section class="faq">
+              <h2 style="margin-bottom: 5%;">Les détails de nos couvertures</h2>
+              <div class="accordion">
+                <div class="card">
+                  <div class="card-header" id="tiersCardInfos">
+                    <h4>
+                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#coll1">
+                        <div class="icon"><i class="bx bx-right-arrow"></i></div>
+                       <div class="title">                
+                         Tiers payant
+                       </div>
+                      </button>
+                    </h4>
+                  </div>
+                  <div id="coll1" class="collapse">
+                    <div class="card-body">
+                      Assurance obligatoire 
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion">
+                <div class="card" id="ttriskCardInfos">
+                  <div class="card-header" id="hd1">
+                    <h4>
+                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#coll2">
+                        <div class="icon"><i class="bx bx-right-arrow"></i></div>
+                       <div class="title">                
+                         Tout risques
+                       </div>
+                      </button>
+                    </h4>
+                  </div>
+                  <div id="coll2" class="collapse">
+                    <div class="card-body">
+                      Assurance optionnelle 
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div><!-- End Price Tab -->
           <div class="form-group">
             <button type="button" id="prevBtn" class="btn btn-primary" onclick="nextPrev(-1)">Précédent</button>
             <button type="button" id="nextBtn" class="btn btn-primary" onclick="nextPrev(1)">Suivant</button>
           </div>
-        </form>
-      </div>
-      
+        </form><!-- End Form -->
+      </div>  
     </section>
-
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -270,8 +436,8 @@
             <div class="col-lg-3 col-md-6 footer-links">
               <h4>Liens utiles</h4>
               <ul>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#about">A propos</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="index.html#">Home</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="index.html#about">A propos</a></li>
               </ul>
             </div>
 

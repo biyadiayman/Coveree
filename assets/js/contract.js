@@ -1,68 +1,81 @@
-var currentTab = 0; // Current tab is set to be the first tab (0)
-showTab(currentTab); // Display the current tab
+var currentTab = 0; // Variable indiquant l'étape de formulaire courante
+showTab(currentTab); // Affiche le tab courant
 
 var mobile = false;
 
+
+//Affiche le n-em tab
 function showTab(n) {
-  // This function will display the specified tab of the form ...
   var x = document.getElementsByClassName("tab");
   x[n].style.display = "block";
-  // ... and fix the Previous/Next buttons:
+
+  //Fix les boutons de bas de formulaire en fonction du tab
   if (n == 0) {
     document.getElementById("prevBtn").style.display = "none";
   } else {
     document.getElementById("prevBtn").style.display = "inline";
   }
-  if (n == (x.length - 1)) {
+  if (n == (x.length - 2)) {
     document.getElementById("nextBtn").innerHTML = "Soumettre";
     document.getElementById("nextBtn").className += " sub";
-  } else {
+  }
+  else {
     document.getElementById("nextBtn").className = document.getElementById("nextBtn").className.replace("sub", "");
     document.getElementById("nextBtn").innerHTML = "Suivant";
+  } 
+  
+  if(n == (x.length - 1)) {
+ //   document.getElementById("bigTitle").style.display = "none";
+    document.getElementById("bigTitle").innerHTML = "Votre contrat";
+    document.getElementById("nextBtn").style.display = "none";
   }
-  // ... and run a function that displays the correct step indicator:
+  else {
+//    document.getElementById("bigTitle").style.display = "block";
+    document.getElementById("bigTitle").innerHTML = "Obtenir mon prix";
+    document.getElementById("nextBtn").style.display = "inline";
+  }
+
   fixStepIndicator(n);
 }
 
+// Fonction qui met à jour les variables pour suivre le tab courant
 function nextPrev(n) {
-  // This function will figure out which tab to display
+
   var x = document.getElementsByClassName("tab");
-  // Exit the function if any field in the current tab is invalid:
+  // Si un des champs est invalid on exit
   if (n == 1 && !validateForm()) return false;
-  // Hide the current tab:
+
   x[currentTab].style.display = "none";
-  // Increase or decrease the current tab by 1:
   currentTab = currentTab + n;
-  // if you have reached the end of the form... :
+
   if (currentTab >= x.length) {
-    //...the form gets submitted:
+
     document.getElementById("regForm").submit();
     return false;
   }
-  // Otherwise, display the correct tab:
+
   showTab(currentTab);
 }
 
+  // Fonction de validation des champs du formulaire, l'attribut valid ou invalid détermine si le champs est bon ou non
 function validateForm() {
-  // This function deals with validation of the form fields
   var x, y, i, valid = true;
   x = document.getElementsByClassName("tab");
-  y = x[currentTab].querySelectorAll('div:not(.hidden) > input');;
-  // A loop that checks every input field in the current tab:
+  //On sélectionne ici uniquement les inputs qui ne sont pas dans une division cachée
+  y = x[currentTab].querySelectorAll('div:not(.hidden) > div:not(.hidden) > input');;
+
   for (i = 0; i < y.length; i++) {
     y[i].className = y[i].className.replace("valid", "");
     y[i].className = y[i].className.replace("invalid", "");
-    // If a field is empty...
+
     if (y[i].value == "") {
-      // add an "invalid" class to the field:
+
       y[i].className += " invalid";
-      // and set the current valid status to false:
       valid = false;
     }
     else if (!y[i].validity.valid) {
       y[i].className = y[i].className.replace("valid", "");
       y[i].className += " invalid";
-      // and set the current valid status to false:
       valid = false; 
     }
     else {
@@ -70,15 +83,12 @@ function validateForm() {
       y[i].className += " valid";
     }
   }
-  // If the valid status is true, mark the step as finished and valid:
-  //if (valid) {
-  //  document.getElementsByClassName("step")[currentTab].className += " finish";
-  //}
-  return valid; // return the valid status
+
+  return valid;
 }
 
+// Fonction qui gère la maj de la barre de progression
 function fixStepIndicator(n) {
-  // This function removes the "active" class of all steps...
   x = document.getElementsByClassName("form-steps__item");
 
   if(n === 0) {
@@ -90,34 +100,21 @@ function fixStepIndicator(n) {
   }
 }
 
-
-function toggleOnPV() {
-  var x = document.querySelector('div.hidden.pv');
-  x.className = x.className.replace("hidden", "");
-}
-
-function toggleOffPV() {
-  var x = document.querySelector('div.pv');
-  if(x.className.search("hidden") == -1) {
-    x.className += " hidden";
-  }
-  x.querySelector("input").value = "";
-}
-
+//Met à jour le format d'affichage lorsque la fenètre est redimensionnée
 function manageMobileDisplay() {
-  console.log("trigger");
-  if(window.innerWidth < 760) {
+  if(window.innerWidth <= 760) {
     toggleMobileDisplayOn();
     mobile = true;
   }
-  else if(mobile && (window.innerWidth >= 760)) {
+  else if(mobile && (window.innerWidth > 760)) {
     toggleMobileDisplayOff();
     mobile = false;
   }
 }
 
+
+//Active le mode d'affichage mobile de la bar de progression
 function toggleMobileDisplayOn() {
-  console.log("On");
   var x = document.querySelector('div.container');
   if(x.className.search("flex-column") == -1) {
     x.className += " flex-column";
@@ -128,8 +125,8 @@ function toggleMobileDisplayOn() {
   }
 }
 
+//Désactive le mode d'affichage mobile de la bar de progression
 function toggleMobileDisplayOff() {
-  console.log("Off");
   var x = document.querySelector('div.container');
   x.className = x.className.replace("flex-column","");
   var y = document.querySelector('section.inner-page');
@@ -138,3 +135,93 @@ function toggleMobileDisplayOff() {
 
 window.onload = manageMobileDisplay;
 window.onresize = manageMobileDisplay;
+
+//jQuerry
+$(function(){
+
+  //La class hidden permet au vérificateur de formulaire d'ignorer la validité du champs caché
+  //2 fonctions pour afficher ou non les bons inputs en fonction de si l'utilisateur connait ou non la plaque d'immatriculation
+  //On reset les valeurs des champs qu'on cache
+  $("#immN").click(function(){
+    $("div.no-imm").slideDown();
+    $("div.no-imm").removeClass("hidden");
+
+
+    $("div.imm").slideUp("");
+    $("div.imm").addClass("hidden");
+    $("div.imm > input").val("");
+  });
+
+  $("#immY").click(function(){
+    $("div.no-imm").slideUp();
+    $("div.no-imm").addClass("hidden");
+    $("div.no-imm > div").each(function() {
+      $( "div.no-imm > div > input" ).val("");
+    });
+
+    $("div.imm").slideDown();
+    $("div.imm").removeClass("hidden");
+  });
+
+  //2 fonctions pour afficher ou non les bons inputs en fonction de si l'utilisateur à eu ou non des PV dans les 10 dernières années
+  //On reset les valeurs des champs qu'on cache
+  $("#pvY").click(function(){
+    $("#nbPvDiv").slideDown();
+    $("#nbPvDiv").removeClass("hidden");
+  });
+
+  $("#pvN").click(function(){
+    $("#nbPvDiv").slideUp();
+    $("#iNbPv").val("");
+    $("#nbPvDiv").addClass("hidden");
+  });
+
+  //Affiche les bons input au chargement de la page, dans le cas ou elle à été rechargé prématurément
+  $( document ).ready(function() {
+    //Partie PV sur 10 ans
+    if($("#pvY").is(":checked")) {
+      $("#nbPvDiv").prop("style", "");
+      $("#nbPvDiv").removeClass("hidden");
+    }
+
+    //Partie conaissance de la plaque d'immatriculation
+    if($("#immN").is(":checked")) {
+      $("div.no-imm").prop("style", "");
+      $("div.no-imm").removeClass("hidden");
+  
+  
+      $("div.imm").prop("style", "display: none;");
+      $("div.imm").addClass("hidden");
+      $("div.imm > input").val("");
+    }
+
+    //Partie couvertures page des prix
+    if($("#ttriskCheck").is(":checked")) {
+      $("#ttriskCard").addClass("checked");
+      $("#ttriskSelect").prop("disabled", false);
+    }
+  });
+
+  //Gestion couverture tiers
+  $("#tiersInfos").click(function() {
+    $("#coll1").collapse('show');
+  });
+
+
+  //Gestion couverture tout risques
+  $('#ttriskCheck').on('change',function(e) {
+    if ($(this).prop('checked')) {
+        $("#ttriskCard").addClass("checked");
+        $("#ttriskSelect").prop("disabled", false);
+    } else {
+        $("#ttriskCard").removeClass("checked");
+        $("#ttriskSelect").prop("disabled", true);
+    }
+  });
+
+  $("#ttriskInfos").click(function() {
+    $("#coll2").collapse('show');
+  });
+});
+
+
