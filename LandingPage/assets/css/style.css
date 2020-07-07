@@ -1537,6 +1537,10 @@ section {
   margin-left: 10px;
 }
 
+.inner-page section {
+  padding: 10px 0;
+}
+
 /*--------------------------------------------------------------
 # Portfolio Details
 --------------------------------------------------------------*/
@@ -1633,6 +1637,10 @@ section {
 .inner-page.mobile-steps {
   margin-top: 35%;
   background: #ffffff;
+}
+
+.inner-page .faq .card {
+  box-shadow: none;
 }
 
 /*--------------------------------------------------------------
@@ -2185,7 +2193,7 @@ section {
 	padding: 0 0 50px 0;
 }
 
-#tiers {
+#tiersCard {
   background-color: #49b5e7;
   color: #fff;
 }
@@ -2208,6 +2216,22 @@ section {
 
 .price_table .card-body div.icon {
   text-align: right;
+  border: 2px soild;
+  border-radius: 5px;
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  transition: 0.5s;
+}
+
+.price_table .card-body div.icon:hover {
+  background-color: #49b5e7;
+}
+
+.price_table .checked .card-body div.icon:hover {
+  background-color: #63bae2;
 }
 
 .price_table .card-body div.col.left {
@@ -2219,3 +2243,20 @@ section {
   padding-right: 0;
   padding-left: 0;
 }
+
+.price_table a {
+  text-decoration: none;
+  color: #444444;
+}
+
+.price_table .checked a {
+  text-decoration: none;
+  color: #fff;
+  transition: 0.5s;
+}
+
+.price_table a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+

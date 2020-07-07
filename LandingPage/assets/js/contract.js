@@ -25,11 +25,13 @@ function showTab(n) {
   } 
   
   if(n == (x.length - 1)) {
-    document.getElementById("bigTitle").style.display = "none";
+ //   document.getElementById("bigTitle").style.display = "none";
+    document.getElementById("bigTitle").innerHTML = "Votre contrat";
     document.getElementById("nextBtn").style.display = "none";
   }
   else {
-    document.getElementById("bigTitle").style.display = "block";
+//    document.getElementById("bigTitle").style.display = "block";
+    document.getElementById("bigTitle").innerHTML = "Obtenir mon prix";
     document.getElementById("nextBtn").style.display = "inline";
   }
 
@@ -200,6 +202,13 @@ $(function(){
     }
   });
 
+  //Gestion couverture tiers
+  $("#tiersInfos").click(function() {
+    $("#coll1").collapse('show');
+  });
+
+
+  //Gestion couverture tout risques
   $('#ttriskCheck').on('change',function(e) {
     if ($(this).prop('checked')) {
         $("#ttriskCard").addClass("checked");
@@ -207,8 +216,12 @@ $(function(){
     } else {
         $("#ttriskCard").removeClass("checked");
         $("#ttriskSelect").prop("disabled", true);
-    };
-});
+    }
+  });
+
+  $("#ttriskInfos").click(function() {
+    $("#coll2").collapse('show');
+  });
 });
 
 
