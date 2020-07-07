@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'coveree_Connection'
+    'coveree_Connection',
+    'coveree_Contract',
+    'coveree_Home'
 ]
 
 MIDDLEWARE = [
@@ -96,7 +98,7 @@ CORS_ORIGIN_WHITELIST = (
 DATABASES = {
     'default': {
           'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'Coveree',
+        'NAME': 'Coveree_db',
         'USER': 'root',
         'PASSWORD': 'root',
         'HOST': 'localhost',   
