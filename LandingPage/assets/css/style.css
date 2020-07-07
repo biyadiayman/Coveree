@@ -819,6 +819,7 @@ section {
 .faq .title {
   font-weight: 700;
   font-size: 18px;
+  margin-left: 4px;
   color: #111;
 }
 
@@ -1429,7 +1430,7 @@ section {
   width: 25px;
   height: 25px;
   line-height: 25px;
-  margin: 0 auto 10px auto;
+  margin: 0 auto 0px auto;
   position: relative;
   font-size: 13px;
   font-weight: 700;
@@ -1487,7 +1488,7 @@ section {
   display: none;
 }
 
-.inner-page button {
+.inner-page div.form-group > button {
   background: #49b5e7;
   border: 0;
   padding: 10px 24px;
@@ -1496,11 +1497,11 @@ section {
   border-radius: 4px;
 }
 
-.inner-page button:hover {
+.inner-page div.form-group > button:hover {
   background: #1da2e0;
 }
 
-.inner-page button.sub {
+.inner-page div.form-group > button.sub {
   background: #fff;
   color: #49b5e7;
   border: solid 1px;
@@ -1509,7 +1510,7 @@ section {
   border-radius: 4px;
 }
 
-.inner-page button.sub:hover {
+.inner-page div.form-group > button.sub:hover {
   color: #1da2e0;
   border-color: #1da2e0;
 }
@@ -1530,6 +1531,10 @@ section {
 
 .inner-page input.form-control.valid:focus {
   box-shadow: 0px 0px 8px rgb(64, 180, 64);
+}
+
+.inner-page .faq .title {
+  margin-left: 10px;
 }
 
 /*--------------------------------------------------------------
@@ -1621,7 +1626,7 @@ section {
 # Inner Page
 --------------------------------------------------------------*/
 .inner-page {
-  margin-top: 8%;
+  margin-top: 5%;
   background: #ffffff;
 }
 
