@@ -1,7 +1,7 @@
 from django.db import models
 
 class Client(models.Model):
-    IdClient=models.IntegerField(primary_key=True,auto_created=True,editable=False)
+    IdClient=models.AutoField(primary_key=True)
     Prenom=models.CharField(max_length=40)
     Nom=models.CharField(max_length=40)
     Genre=models.CharField(max_length=1)
