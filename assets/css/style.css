@@ -1439,12 +1439,13 @@ section {
 }
 
 .inner-page .faq .title {
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .inner-page section {
   padding: 10px 0;
 }
+
 
 /*--------------------------------------------------------------
 # Portfolio Details
@@ -1726,6 +1727,10 @@ section {
 /*--------------------------------------------------------------
 # Price table
 --------------------------------------------------------------*/
+
+.tab, .tab * {
+  position: relative;
+}
 
 #frame{
   border: solid 1px;

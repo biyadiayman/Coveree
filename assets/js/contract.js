@@ -9,13 +9,18 @@ function showTab(n) {
   var x = document.getElementsByClassName("tab");
   x[n].style.display = "block";
 
-  //Fix les boutons de bas de formulaire en fonction du tab
+  fixButton(n, x.length);
+  fixStepIndicator(n);
+}
+
+function fixButton(n, l) {
+    //Fix les boutons de bas de formulaire en fonction du tab
   if (n == 0) {
     document.getElementById("prevBtn").style.display = "none";
   } else {
     document.getElementById("prevBtn").style.display = "inline";
   }
-  if (n == (x.length - 2)) {
+  if (n == (l - 2)) {
     document.getElementById("nextBtn").innerHTML = "Soumettre";
     document.getElementById("nextBtn").className += " sub";
   }
@@ -24,7 +29,7 @@ function showTab(n) {
     document.getElementById("nextBtn").innerHTML = "Suivant";
   } 
   
-  if(n == (x.length - 1)) {
+  if(n == (l - 1)) {
  //   document.getElementById("bigTitle").style.display = "none";
     document.getElementById("bigTitle").innerHTML = "Votre contrat";
     document.getElementById("nextBtn").style.display = "none";
@@ -34,27 +39,74 @@ function showTab(n) {
     document.getElementById("bigTitle").innerHTML = "Obtenir mon prix";
     document.getElementById("nextBtn").style.display = "inline";
   }
+}
 
-  fixStepIndicator(n);
+function toggleButton(n) {
+  if(n==0) {
+    document.getElementById("prevBtn").disabled = true;
+    document.getElementById("nextBtn").disabled = true;
+  }
+  else {
+    document.getElementById("prevBtn").disabled = false;
+    document.getElementById("nextBtn").disabled = false;
+  }
 }
 
 // Fonction qui met à jour les variables pour suivre le tab courant
 function nextPrev(n) {
-
   var x = document.getElementsByClassName("tab");
   // Si un des champs est invalid on exit
   if (n == 1 && !validateForm()) return false;
+  //Désactive les bouton pendant l'animation pour empecher les bugs
+  toggleButton(0);
+  //fix les boutons avant l'animation pour plus de fluidité
+  fixButton(currentTab+n, x.length);
 
-  x[currentTab].style.display = "none";
-  currentTab = currentTab + n;
 
-  if (currentTab >= x.length) {
-
-    document.getElementById("regForm").submit();
-    return false;
+  //Animation dans le cas où on avance dans le formulaire
+  if(n==1) {
+    $("#tab"+currentTab).animate({
+    left: '-200px',
+    opacity: 0
+    },300, function() {
+      x[currentTab].style.display = "none";
+      currentTab = currentTab + n;
+      $("#tab"+currentTab).fadeIn('fast', function() {
+        if (currentTab >= x.length) {
+    
+          document.getElementById("regForm").submit();
+          return false;
+        }
+        showTab(currentTab);
+        $("#tab"+(currentTab-1)).css("left", "0px");
+        $("#tab"+(currentTab-1)).css("opacity", "1");
+        toggleButton(1);
+      })
+    }
+      );
   }
-
-  showTab(currentTab);
+  //Animation dans le cas où on recule dans le formulaire
+  else {
+    $("#tab"+currentTab).animate({
+      left: '200px',
+      opacity: 0
+      }, 300, function() {
+        x[currentTab].style.display = "none";
+        currentTab = currentTab + n;
+        $("#tab"+currentTab).fadeIn('fast', function() {
+          if (currentTab >= x.length) {
+      
+            document.getElementById("regForm").submit();
+            return false;
+          }
+          showTab(currentTab);
+          $("#tab"+(currentTab+1)).css("left", "0px");
+          $("#tab"+(currentTab+1)).css("opacity", "1");
+          toggleButton(1);
+        })
+      }
+        );
+  }
 }
 
   // Fonction de validation des champs du formulaire, l'attribut valid ou invalid détermine si le champs est bon ou non
@@ -222,6 +274,13 @@ $(function(){
   $("#ttriskInfos").click(function() {
     $("#coll2").collapse('show');
   });
+
+  //Animation form
+  window.switchTab = function(n) {
+    $("#tab1").fadeOut('slow', function() {
+      console.log("finish");
+    });
+};
 });
 
 
