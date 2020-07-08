@@ -79,11 +79,11 @@
   <main id="main"> 
     <section class="inner-page">
       <div class="container">
-        <h1 style="font-weight: 600; text-transform: uppercase; margin-bottom: 5%" id="bigTitle">Obtenir mon prix</h1>
+        <h1 style="font-weight: 600; text-transform: uppercase; margin-bottom: 3%" id="bigTitle">Obtenir mon prix</h1>
         <!-- ====== Form Start ====== -->
         <form>
           <!-- ====== Vehicule Tab ====== -->
-          <div class="tab">
+          <div class="tab" id="tab0">
             <h3>Le véhicule que vous souhaitez assurer:</h3>
             <div class="form-group">
               <legend class="col-form-label">Connaissez-vous le numéro d'immatriculation du véhicule ?</legend>
@@ -156,7 +156,7 @@
           </div><!-- End Vehicule Tab -->
 
           <!-- ====== Customer Infos Tab ====== -->
-          <div class="tab"> 
+          <div class="tab" id="tab1"> 
             <div class="form-group">
               <label for="iFname">Votre prénom:</label>
               <input type="text" class="form-control" id="iFname" placeholder="Prenom">
@@ -187,7 +187,7 @@
           </div><!-- End Customer Infos Tab -->
 
           <!-- ====== Driver Licence Tab ====== -->
-          <div class="tab">
+          <div class="tab" id="tab2">
             <div class="form-group">
               <label for="iMarit">Statut marital:</label>
               <select class="form-control" id="iMarit">
@@ -274,7 +274,7 @@
           </div><!-- End Driver Licence Tab -->
 
           <!-- ====== Price Tab ====== -->
-          <div class="tab price_table">
+          <div class="tab price_table" id="tab3">
             <div id="price_table">   
               <section>
                 <div class="container" id="frame">
