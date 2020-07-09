@@ -36,10 +36,8 @@ class Conduite(models.Model):
     
 
 class Vehicule(models.Model):
-    Fabrication=models.IntegerField()
-    Marque=models.CharField(max_length=40)
-    StyleCaroosserie=models.CharField(max_length=40)
-    StatutPossetion=models.CharField(max_length=40)
+    ImmatriculationBool=models.BooleanField()
+    Immatriculation=models.CharField(max_length=40)
     Antivol=models.CharField(max_length=40)
     VTC=models.BooleanField()
     

@@ -372,7 +372,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 80vh;
-  background: #f4fbfe;
+  background: #ffffff;
 }
 
 #hero .container {
@@ -529,7 +529,7 @@ section {
 }
 
 .about .video-box {
-  background: url("../img/about.png") center center no-repeat;
+  background: url("../img/about.jpg") center center no-repeat;
   background-size: cover;
   min-height: 500px;
 }
@@ -819,6 +819,7 @@ section {
 .faq .title {
   font-weight: 700;
   font-size: 18px;
+  margin-left: 4px;
   color: #111;
 }
 
@@ -1095,6 +1096,101 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Team
+--------------------------------------------------------------*/
+.team .member {
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.team .member .member-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.team .member .social {
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+  right: 0;
+  opacity: 0;
+  transition: ease-in-out 0.3s;
+  text-align: center;
+}
+
+.team .member .social a {
+  transition: color 0.3s;
+  color: #0f394c;
+  margin: 0 3px;
+  padding-top: 7px;
+  border-radius: 50px;
+  width: 36px;
+  height: 36px;
+  background: rgba(73, 181, 231, 0.8);
+  display: inline-block;
+  transition: ease-in-out 0.3s;
+  color: #fff;
+}
+
+.team .member .social a:hover {
+  background: #76c7ed;
+}
+
+.team .member .social i {
+  font-size: 18px;
+}
+
+.team .member .member-info {
+  padding: 25px 15px;
+}
+
+.team .member .member-info h4 {
+  font-weight: 700;
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: #0f394c;
+}
+
+.team .member .member-info span {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: #aaaaaa;
+}
+
+.team .member .member-info p {
+  font-style: italic;
+  font-size: 14px;
+  line-height: 26px;
+  color: #777777;
+}
+
+.team .member:hover .social {
+  opacity: 1;
+  bottom: 15px;
+}
+
+/*--------------------------------------------------------------
+# Gallery
+--------------------------------------------------------------*/
+.gallery .gallery-item {
+  overflow: hidden;
+  border-right: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+}
+
+.gallery .gallery-item img {
+  transition: all ease-in-out 0.4s;
+}
+
+.gallery .gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
 .contact .info {
@@ -1334,7 +1430,7 @@ section {
   width: 25px;
   height: 25px;
   line-height: 25px;
-  margin: 0 auto 10px auto;
+  margin: 0 auto 0px auto;
   position: relative;
   font-size: 13px;
   font-weight: 700;
@@ -1392,7 +1488,7 @@ section {
   display: none;
 }
 
-.inner-page button {
+.inner-page div.form-group > button {
   background: #49b5e7;
   border: 0;
   padding: 10px 24px;
@@ -1401,11 +1497,11 @@ section {
   border-radius: 4px;
 }
 
-.inner-page button:hover {
+.inner-page div.form-group > button:hover {
   background: #1da2e0;
 }
 
-.inner-page button.sub {
+.inner-page div.form-group > button.sub {
   background: #fff;
   color: #49b5e7;
   border: solid 1px;
@@ -1414,7 +1510,7 @@ section {
   border-radius: 4px;
 }
 
-.inner-page button.sub:hover {
+.inner-page div.form-group > button.sub:hover {
   color: #1da2e0;
   border-color: #1da2e0;
 }
@@ -1437,8 +1533,12 @@ section {
   box-shadow: 0px 0px 8px rgb(64, 180, 64);
 }
 
-.inner-page .form-group.hidden {
-  display: none;
+.inner-page .faq .title {
+  margin-left: 10px;
+}
+
+.inner-page section {
+  padding: 10px 0;
 }
 
 /*--------------------------------------------------------------
@@ -1530,7 +1630,7 @@ section {
 # Inner Page
 --------------------------------------------------------------*/
 .inner-page {
-  margin-top: 8%;
+  margin-top: 5%;
   background: #ffffff;
 }
 
@@ -1539,15 +1639,19 @@ section {
   background: #ffffff;
 }
 
+.inner-page .faq .card {
+  box-shadow: none;
+}
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: #f4fbfe;
+  background: #fff;
   padding: 0 0 30px 0;
   color: #444444;
   font-size: 14px;
-  background: #f4fbfe;
+  background: #ebf7fc;
 }
 
 #footer .footer-newsletter {
@@ -1604,7 +1708,7 @@ section {
 
 #footer .footer-top {
   padding: 60px 0 30px 0;
-  background: #f4fbfe;
+  background: #fff;
 }
 
 #footer .footer-top .footer-contact {
@@ -1712,3 +1816,447 @@ section {
     text-align: center;
   }
 }
+
+
+/*--------------------------------------------------------------
+# Price table
+--------------------------------------------------------------*/
+
+#frame{
+  border: solid 1px;
+  border-color: #444444;
+  padding: 0;
+  width: 75%;
+}
+
+/*PRICE COLOR CODE START*/
+#price_table .content{
+	background-color: #fff;
+}
+
+#price_table .content .head_price{
+	background-color: #f6f6f6;
+}
+
+#price_table .content .head_price .head_content .head_bg{
+	border-color: #e4e4e4 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #e4e4e4;
+}
+
+#price_table .content .head_price .head_content .head span{
+	color: #525252;
+}
+
+#price_table .content .head_price .price_tag .price .sign{
+    color: #414141;
+}
+
+#price_table .content .head_price .price_tag .price .currency{
+    color: #414141;
+}
+
+#price_table .content .head_price .price_tag .price .cent{
+    color: #414141;
+}
+
+#price_table .content .head_price .price_tag .month{
+    color: #414141;
+}
+
+#price_table .content .coverage_list ul li{	
+	color: #a7a7a7;
+}
+
+#price_table .content .coverage_list ul li span{
+	color: #414141;
+}
+#price_table .content .coverage_list ul li:hover{
+	background-color: #E4E4E4;
+	border-left: 5px solid #49b5e7;
+}
+
+#price_table .content .price_btn a{
+	border: 1px solid #49b5e7; 
+    color: #49b5e7;
+} 
+
+#price_table .content.active .head_price .head_content .head_bg,
+#price_table .content:hover .head_price .head_content .head_bg{
+	border-color: #49b5e7 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #49b5e7;
+	color: #fff;
+}
+
+#price_table .content:hover .head_price .head_content .head span,
+#price_table .content.active .head_price .head_content .head span{
+	color: #fff;
+}
+
+#price_table .content:hover .price_btn a,
+#price_table .content.active .price_btn a{
+	background-color: #49b5e7;
+	color: #fff;
+} 
+#price_table{
+	margin: 50px 0 50px 0;
+}
+.row .table{
+    padding: 28px 0;
+}
+
+/*PRICE BODY CODE START*/
+
+#price_table .content{
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+}
+
+#price_table .content .head_price {
+	margin: 0 0 20px 0;
+}
+
+#price_table .content .head_price .head_content{
+	margin: 0 0 50px 0;
+}
+
+#price_table .content .head_price .head_content .head_bg{
+    border-style: solid;
+    border-width: 90px 1411px 23px 399px;
+	position: absolute;
+}
+
+#price_table .content .head_price .head_content .head{
+	padding-top: 40px;
+	position: relative;
+	z-index: 1;
+}
+
+#price_table .content .head_price .head_content .head span{
+    font-family: "Dosis", sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+#price_table .content .head_price .price_tag{
+	padding: 0 0 20px;
+}
+
+#price_table .content .head_price .price_tag .price{
+	display: block;
+}
+
+#price_table .content .head_price .price_tag .price .sign{
+    display: inline-block;
+    font-family: "Lato",sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    vertical-align: middle;
+}
+
+#price_table .content .head_price .price_tag .price .currency{
+    font-family: "Lato",sans-serif;
+    font-size: 60px;
+    font-weight: 300;
+    letter-spacing: -2px;
+    line-height: 60px;
+    padding: 0;
+    vertical-align: middle;
+}
+
+#price_table .content .head_price .price_tag .price .cent{
+    display: inline-block;
+    font-family: "Lato",sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    vertical-align: bottom;
+}
+
+#price_table .content .head_price .price_tag .month{
+    font-family: "Lato",sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    vertical-align: bottom;
+}
+
+#price_table .content .coverage_list ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#price_table .content .coverage_list ul li{
+	font-family: "Lato",sans-serif;
+	font-size: 18px;
+	padding: 15px 0;
+	transition: all 0.3s ease-in-out 0s;
+}
+#price_table .content .coverage_list ul li:hover{
+	transition: all 0.3s ease-in-out 0s;
+	-moz-transition: all 0.3s ease-in-out 0s;
+	-ms-transition: all 0.3s ease-in-out 0s;
+	-o-transition: all 0.3s ease-in-out 0s;
+	-webkit-transition: all 0.3s ease-in-out 0s;
+
+}
+#price_table .content .coverage_list ul li .fa{
+	padding: 0 10px;
+}
+#price_table .content .price_btn{
+	margin: 20px 0 32px;
+}
+
+#price_table .content .price_btn a{
+    border-radius: 50px;
+	-moz-border-radius: 50px;
+	-ms-border-radius: 50px;
+	-o-border-radius: 50px;
+	-webkit-border-radius: 50px;
+    display: inline-block;
+    font-family: "Lato",sans-serif;
+    font-size: 18px;
+    outline: medium none;
+    padding: 12px 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#price_table .content,
+#price_table .content:hover,
+#price_table .content .head_price .head_content .head_bg,
+#price_table .content:hover .head_price .head_content .head_bg,
+#price_table .content .head_price .head_content .head h2,
+#price_table .content:hover .head_price .head_content .head h2,
+#price_table .content .price,
+#price_table .content:hover .price,
+#price_table .content .price_btn a,
+#price_table .content:hover .price_btn a{
+	transition: all 0.3s ease-in-out 0s;
+	-moz-transition: all 0.3s ease-in-out 0s;
+	-ms-transition: all 0.3s ease-in-out 0s;
+	-o-transition: all 0.3s ease-in-out 0s;
+	-webkit-transition: all 0.3s ease-in-out 0s;
+} 
+@media (max-width: 320px) {	
+}
+
+@media (max-width: 767px) {
+	#price_table .content{
+		margin-bottom:75px;
+	}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	#price_table .col-md-3{
+		float:left;
+		width:50%;
+	}
+	
+	#price_table .col-md-4{
+		float:left;
+		width:50%;
+	}
+	
+	#price_table .content{
+		margin-bottom:75px;
+	}
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+@media (min-width: 1200px) {
+}
+#price_table_home{
+	 font-family: 'Raleway', sans-serif;
+}
+
+.text-center h1,
+.text-center h1 a{
+	color: #7885CB;
+	font-size: 30px;
+	font-weight: 300;
+	text-decoration: none;
+}
+.demo-pic{
+	margin: 0 auto;
+}
+.demo-pic:hover{
+	opacity: 0.7;
+}
+
+#price_table_home ul{
+	margin: 0 auto;
+	padding: 0;
+	list-style: none;
+	display: table;
+}
+#price_table_home li{
+	float: left;
+}
+#price_table_home li + li{
+	margin-left: 10px;
+	padding-bottom: 10px;
+}
+#price_table_home li a{
+	display: block;
+	width: 50px;
+	height: 50px;
+	font-size: 0px;
+}
+#price_table_home .blue{
+	background: #3498DB;
+	transition: all 0.3s ease-in-out 0s;
+}
+#price_table_home .emerald{
+	background: #2ECC71;
+	transition: all 0.3s ease-in-out 0s;
+}
+#price_table_home .grey{
+	background: #7F8C8D;
+	transition: all 0.3s ease-in-out 0s;
+}
+#price_table_home .midnight{
+	background: #34495E;
+	transition: all 0.3s ease-in-out 0s;
+}
+#price_table_home .orange{
+	background: #E67E22;
+	transition: all 0.3s ease-in-out 0s;
+}
+#price_table_home .purple{
+	background: #9B59B6;
+	transition: all 0.3s ease-in-out 0s;
+}
+#price_table_home .red{
+	background: #E74C3C;
+	transition:all 0.3s ease-in-out 0s;
+}
+#price_table_home .turquoise{
+	background: #1ABC9C;
+	transition: all 0.3s ease-in-out 0s;
+}
+
+#price_table_home .blue:hover,
+#price_table_home .emerald:hover,
+#price_table_home .grey:hover,
+#price_table_home .midnight:hover,
+#price_table_home .orange:hover,
+#price_table_home .purple:hover,
+#price_table_home .red:hover,
+#price_table_home .turquoise:hover{
+	border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+	transition: all 0.3s ease-in-out 0s;
+}
+#price_table_home .divider{
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 20px;
+	padding: 20px;
+}
+#price_table_home .divider span{
+	width: 100%;
+	display: table;
+	height: 2px;
+	background: #ddd;
+	margin: 50px auto;
+	line-height: 2px;
+}
+#price_table_home .itemname{
+	text-align: center;
+	font-size: 50px ;
+	padding: 50px 0 20px ;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 40px;
+	text-decoration: none;
+    font-weight: 300;
+}
+#price_table_home .itemnametext{
+    text-align: center;
+    font-size: 20px;
+    padding-top: 5px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+#price_table_home .footer{
+	padding:40px 0;
+}
+
+.price-heading{
+    text-align: center;
+}
+.price-heading h1{
+	color: #666;
+	margin: 0;
+	padding: 0 0 50px 0;
+}
+
+#tiersCard {
+  background-color: #49b5e7;
+  color: #fff;
+}
+
+.price_table div.card{
+  transition: all 0.5s ease;
+}
+.price_table .checked {
+  background-color: #49b5e7;
+  color: #fff;
+}
+
+.price_table .card-body div.form-check {
+  text-align: left;
+}
+
+.price_table div.card-body {
+  padding-top: 1rem;
+}
+
+.price_table .card-body div.icon {
+  text-align: right;
+  border: 2px soild;
+  border-radius: 5px;
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  transition: 0.5s;
+}
+
+.price_table .card-body div.icon:hover {
+  background-color: #49b5e7;
+}
+
+.price_table .checked .card-body div.icon:hover {
+  background-color: #63bae2;
+}
+
+.price_table .card-body div.col.left {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.price_table .card-body div.col.right {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.price_table a {
+  text-decoration: none;
+  color: #444444;
+}
+
+.price_table .checked a {
+  text-decoration: none;
+  color: #fff;
+  transition: 0.5s;
+}
+
+.price_table a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
