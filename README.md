@@ -1,7 +1,7 @@
 # Coveree
 
 ## Test API
-to run the api just type `node index.js` or use nodemon for auto reload
+to run the api first install the modules with `npm install` then just run `node index.js` or use nodemon for auto reload
 
 Doc links:
 - http://expressjs.com/en/4x/api.html
