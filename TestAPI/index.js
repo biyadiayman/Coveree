@@ -1,9 +1,14 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+var path = require('path');
 var multer  = require('multer')
-
+var upload = multer({ dest: 'images/' })
 // App
 const app = express()
+
+
+/*var dir = path.join(__dirname, 'public');
+app.use(express.static(dir));*/
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -22,10 +27,11 @@ app.get('/price', (req, res) => {
     res.json({price: req.body['salary'] + 69.420})
 })
 
-app.post('/damage', (req, res) => {
-    console.log(req.body)
-    res.json({resultImageUrl: 'somewhereOnlyWeKnow/image.jpg'})
+app.post('/damage', upload.single('image'), (req, res) => {
+    //res.json({resultImageUrl: 'images/DB5Wasted.png'})
+    res.sendFile(path.join(__dirname, 'images', 'DB5Wasted.png'))
 })
+
 
 // Start server
 app.listen('1337')
