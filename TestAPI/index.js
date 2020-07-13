@@ -1,5 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+var multer  = require('multer')
 
 // App
 const app = express()
@@ -17,9 +18,13 @@ app.get('/', (req, res) =>{
 app.get('/price', (req, res) => {
     console.log("*** REQ BODY ***");
     console.log(req.body)
-    console.log(req.body['car'])
     console.log("*** REQ BODY ***");
     res.json({price: req.body['salary'] + 69.420})
+})
+
+app.post('/damage', (req, res) => {
+    console.log(req.body)
+    res.json({resultImageUrl: 'somewhereOnlyWeKnow/image.jpg'})
 })
 
 // Start server
