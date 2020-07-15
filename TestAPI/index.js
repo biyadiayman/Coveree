@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 var path = require('path');
 var multer  = require('multer')
 var upload = multer({ dest: 'images/' })
+var cors = require('cors')
 // App
 const app = express()
 
@@ -15,12 +16,16 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
+//CORS
+app.use(cors())
+
+
 // Routes
 app.get('/', (req, res) =>{
     res.json({ message: 'Hola Mundo!'})
 })
 
-app.get('/price', (req, res) => {
+app.post('/price', (req, res) => {
     console.log("*** REQ BODY ***");
     console.log(req.body)
     console.log("*** REQ BODY ***");
