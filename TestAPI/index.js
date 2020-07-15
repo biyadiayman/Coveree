@@ -29,7 +29,9 @@ app.post('/price', (req, res) => {
     console.log("*** REQ BODY ***");
     console.log(req.body)
     console.log("*** REQ BODY ***");
-    res.json({price: req.body['salary'] + 69.420})
+    console.log("*** RES ***");
+    console.log(parseInt(req.body['iPermitYear']) + 69.420);
+    res.json({price: parseInt(req.body['iPermitYear']) + 69.420})
 })
 
 app.post('/damage', upload.single('image'), (req, res) => {

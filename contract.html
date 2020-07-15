@@ -81,7 +81,7 @@
       <div class="container">
         <h1 style="font-weight: 600; text-transform: uppercase; margin-bottom: 3%" id="bigTitle">Obtenir mon prix</h1>
         <!-- ====== Form Start ====== -->
-        <form>
+        <form id="userForm">
           <!-- ====== Vehicule Tab ====== -->
           <div class="tab" id="tab0">
             <h3>Le véhicule que vous souhaitez assurer:</h3>
@@ -159,11 +159,11 @@
           <div class="tab" id="tab1"> 
             <div class="form-group">
               <label for="iFname">Votre prénom:</label>
-              <input type="text" class="form-control" id="iFname" placeholder="Prenom">
+              <input type="text" class="form-control" id="iFname" name="firstname" placeholder="Prenom">
             </div>
             <div class="form-group">
               <label for="iLname">Votre nom:</label>
-              <input type="text" class="form-control" id="iLname" placeholder="Nom">
+              <input type="text" class="form-control" id="iLname" name="lastname" placeholder="Nom">
             </div>
             <div class="form-group">
               <legend class="col-form-label">Genre (comme il apparait sur votre permis de conduire):</legend>
@@ -201,8 +201,8 @@
               </select>
             </div>
             <div class="form-group">
-              <label for="iPermityear">Année d'obtention du permis:</label>
-              <input type="number" class="form-control" id="iPermityear" placeholder="Année d'obtention du permis">
+              <label for="iPermitYear">Année d'obtention du permis:</label>
+              <input type="number" class="form-control" id="iPermitYear" name="iPermitYear" placeholder="Année d'obtention du permis">
             </div>
             <div class="form-group">
               <legend class="col-form-label">Avez-vous été suspendus de permis durant les 3 dernières années ?</legend>
@@ -288,8 +288,8 @@
                       </div>
                       <div class="price_tag clearfix">	
                         <span class="price">
-                          <span class="currency">200</span>
-                          <span class="cent">.99</span>
+                          <span class="currency" id="price_cur">200</span>
+                          <span class="cent" id="price_cent">.99</span>
                           <span class="sign">€</span>
                           <span class="month">/MOIS</span>
                         </span>

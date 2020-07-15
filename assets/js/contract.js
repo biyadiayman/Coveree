@@ -1,12 +1,17 @@
 var currentTab = 0; // Variable indiquant l'étape de formulaire courante
+var mobile = false;
+var price = 0;
+var price_cur = 0;
+var price_cent = 0;
+
 showTab(currentTab); // Affiche le tab courant
 
-var mobile = false;
 
 
 //Affiche le n-em tab
 function showTab(n) {
   var x = document.getElementsByClassName("tab");
+  console.log(price);
   x[n].style.display = "block";
 
   fixButton(n, x.length);
@@ -30,6 +35,7 @@ function fixButton(n, l) {
   } 
   
   if(n == (l - 1)) {
+    updatePrice();
  //   document.getElementById("bigTitle").style.display = "none";
     document.getElementById("bigTitle").innerHTML = "Votre contrat";
     document.getElementById("nextBtn").style.display = "none";
@@ -59,6 +65,10 @@ function nextPrev(n) {
   if (n == 1 && !validateForm()) return false;
   //Désactive les bouton pendant l'animation pour empecher les bugs
   toggleButton(0);
+
+  if(currentTab+n == x.length - 1) {
+    getPrice();
+  }
   //fix les boutons avant l'animation pour plus de fluidité
   fixButton(currentTab+n, x.length);
 
@@ -187,6 +197,40 @@ function toggleMobileDisplayOff() {
 
 window.onload = manageMobileDisplay;
 window.onresize = manageMobileDisplay;
+
+function getPrice() {
+  console.log("Get price");
+  var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+
+var formData = new FormData(document.getElementById("userForm"));
+var object = {};
+formData.forEach(function(value, key){
+    object[key] = value;
+});
+var raw = JSON.stringify(object);
+console.log(raw);
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("http://localhost:1337/price", requestOptions)
+  .then(response => response.json())
+  .then(result => { window.price = result.price})
+  .catch(error => console.log('error', error));
+}
+
+
+function updatePrice() {
+  price_cur = Math.trunc( price );
+  price_cent = (price + "").split(".")[1]
+  document.getElementById("price_cur").innerHTML = price_cur;
+  document.getElementById("price_cent").innerHTML = "." + price_cent;
+}
 
 //jQuerry
 $(function(){
