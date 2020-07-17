@@ -11,7 +11,6 @@ showTab(currentTab); // Affiche le tab courant
 //Affiche le n-em tab
 function showTab(n) {
   var x = document.getElementsByClassName("tab");
-  console.log(price);
   x[n].style.display = "block";
 
   fixButton(n, x.length);

@@ -133,9 +133,9 @@
 
             <div class="icon-box">
               <div class="icon"><i class="bx bx-hourglass"></i></div>
-              <h4 class="title"><a href="">Agilité</a></h4>
+              <h4 class="title"><a href="">Rapidité</a></h4>
               <p class="description">Notre platefrome 100% digitale vous offre la possibilité d'avoir tout vos contrats en ligne et disponible à tout moment.
-                Obtenez une estimation de votre remboursement instantanément lors de votre sinistre à partir d'une simple photo de votre véhicule.
+                Obtenez une estimation de votre remboursement instantanément lors de votre sinistre à partir d'une simple photo de votre véhicule. Un test de notre système de diagnostique du véhicule est disponible ci dessous.
               </p>
             </div>
 
@@ -152,39 +152,44 @@
                 ne plus vous souciez du budget de votre assurance automobile. 
               </p>
             </div>
-
+            <a href="" data-toggle="modal" onclick="loadFile()" style="text-align: center;" data-target="#modalAi" class="btn-get-started">Démonstration d'un diagnostique de véhicule</a>
           </div>
         </div>
-
       </div>
     </section><!-- End About Section -->
-
-        <!-- ======= Explain Section ======= -->
-        <section id="explain" class="explain">
-          <div class="container">
-            <a href="" data-toggle="modal" data-target="#modalAi" class="btn">Obtenir une démonstration</a>
+    
+    <!-- ======= Demo modal ======= -->
+    <div class="modal fade" id="modalAi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalAiLabel">Diagnostique de véhicule</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
-        </section><!-- End Explain Section -->
-
-        <div class="modal fade" id="modalAi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="modalAiLabel">Démonstration</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                ...
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Précédent</button>
-                <button type="button" class="btn btn-primary">Suivant</button>
-              </div>
+          <div class="modal-body">
+            <div class="tab">
+              <input type="file" name="myImage" accept="image/*" id="input" onchange="loadFile()"/>
+              <img id="carImage"/>	
+            </div>
+            <div class="tab">
+              <img id="evalImage"/>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div style="text-align: right">
+              <button type="button" class="btn" onclick="nextPrev(-1)" id="prevBtn">Précédent</button>
+              <button type="button" class="btn" onclick="nextPrev(1)" id="nextBtn" disabled>Suivant</button>
+            </div>
+            <div style="text-align:center;">
+              <span class="step"></span>
+              <span class="step"></span>
             </div>
           </div>
         </div>
+      </div>
+    </div><!-- End Explain Section -->
 
     <!-- ======= Counts Section =======
     <section id="counts" class="counts">

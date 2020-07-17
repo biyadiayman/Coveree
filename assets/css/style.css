@@ -221,6 +221,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /*Modal section*/
 
+/*Modal bacjground jumping to top fix*/
+body.modal-open {
+  position: inherit;
+  overflow: hidden;
+}
+
 /* Modal fix twitching header */
 .modal-open {
   position: fixed;
@@ -240,6 +246,40 @@ h1, h2, h3, h4, h5, h6 {
 
 .modal-content {
   margin-top: 15%;
+}
+
+/*modal demo*/
+#modalAi img{
+  max-width: 100%;
+  height: auto;
+}
+
+/* Step marker: Place in the form. */
+#modalAi .step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+
+
+#modalAi .step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+#modalAi .step.finish {
+  background-color: #4CAF50;
+}
+
+
+#modalAi .modal-footer {
+  display: block;
 }
 
 /* Mobile Navigation */
@@ -612,6 +652,25 @@ section {
   -webkit-animation: none;
   animation: none;
   border-radius: 0;
+}
+
+.about .btn-get-started {
+  font-family: "Dosis", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 28px;
+  border-radius: 3px;
+  transition: 0.5s;
+  margin-top: 25px;
+  color: #fff;
+  background: #49b5e7;
+  text-transform: uppercase;
+}
+
+.about .btn-get-started:hover {
+  background: #76c7ed;
 }
 
 @-webkit-keyframes pulsate-btn {

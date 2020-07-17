@@ -175,5 +175,89 @@
     loop: true,
     items: 1
   });
-
 })(jQuery);
+
+
+function loadFile() {
+  var image = document.getElementById('carImage');
+  var path = document.getElementById('input');
+  if(path.files[0] != null) {
+    image.src = URL.createObjectURL(path.files[0]);
+    document.getElementById('nextBtn').removeAttribute("disabled");
+  }
+}
+
+function getEval() {
+  var path = document.getElementById('input');
+  var eval = document.getElementById('evalImage');
+
+  
+  var formdata = new FormData();
+  formdata.append("image", path.files[0], "/path/to/file");
+
+  var requestOptions = {
+  method: 'POST',
+  body: formdata,
+  redirect: 'follow'
+  };
+
+fetch("http://localhost:1337/damage", requestOptions)
+  .then(response => response.blob())
+  .then(result => {eval.src = URL.createObjectURL(result)})
+  .catch(error => console.log('error', error));
+}
+
+var currentTab = 0;
+showTab(currentTab);
+
+function showTab(n) {
+  var x = document.getElementsByClassName("tab");
+  x[n].style.display = "block";
+
+  if(n == x.length - 1){
+    getEval();
+  }
+
+  fixButton(n, x.length);
+  fixStepIndicator(n);
+}
+
+function fixButton(n, l) {
+  //Fix les boutons de bas de formulaire en fonction du tab
+  if (n == 0) {
+    document.getElementById("prevBtn").style.display = "none";
+    document.getElementById("nextBtn").innerHTML = "Suivant";
+  } 
+  else if (n == 1) {
+    document.getElementById("prevBtn").style.display = "inline";
+    document.getElementById("nextBtn").innerHTML = "Fermer";
+  }
+}
+
+// Fonction qui gère la maj de la barre de progression
+function fixStepIndicator(n) {
+  x = document.getElementsByClassName("step");
+
+  if(n === 0) {
+    x[n].className += " active";
+    x[n+1].className = x[n+1].className.replace("active", "");
+  }
+  else if(n > 0) {
+    x[n-1].className = x[n-1].className.replace("active", "");
+    x[n].className += " active";
+  }
+}
+
+function nextPrev(n) {
+  var x = document.getElementsByClassName("tab");
+  if(currentTab + n <= 1) {
+    x[currentTab].style.display = "none";
+    currentTab = currentTab + n;
+    showTab(currentTab);
+  }
+  else {
+    $('#modalAi').modal('hide');
+  }
+      
+}
+
