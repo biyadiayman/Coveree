@@ -177,7 +177,7 @@
   });
 })(jQuery);
 
-
+//Fonction qui affiche l'image sélectionner par l'utilisateur
 function loadFile() {
   var image = document.getElementById('carImage');
   var path = document.getElementById('input');
@@ -187,6 +187,7 @@ function loadFile() {
   }
 }
 
+//Fonction qui envoie l'image de la voiture accidenter à l'api, récupère la réponse puis l'affiche
 function getEval() {
   var path = document.getElementById('input');
   var eval = document.getElementById('evalImage');
@@ -207,9 +208,12 @@ fetch("http://localhost:1337/damage", requestOptions)
   .catch(error => console.log('error', error));
 }
 
+//Variables pour  l'animation du modal démonstration, similaire au formulaire du contrat.js
 var currentTab = 0;
 showTab(currentTab);
 
+
+//Affiche le n-em tab
 function showTab(n) {
   var x = document.getElementsByClassName("tab");
   x[n].style.display = "block";
@@ -248,16 +252,36 @@ function fixStepIndicator(n) {
   }
 }
 
+// Fonction qui met à jour les variables pour suivre le tab courant
 function nextPrev(n) {
   var x = document.getElementsByClassName("tab");
   if(currentTab + n <= 1) {
-    x[currentTab].style.display = "none";
-    currentTab = currentTab + n;
-    showTab(currentTab);
+    //On désactive les boutons pour éviter les bugs
+    toggleButton(0);
+    //On fix les boutons en bas avant l'animation pour plus de fluiditer
+    fixButton(currentTab+n, x.length);
+    $("#tab"+currentTab).fadeOut("fast", function() {
+      currentTab = currentTab + n;
+      $("#tab"+currentTab).fadeIn("fast", function() {
+        showTab(currentTab);
+        toggleButton(1);
+      });
+    });
   }
-  else {
+  else { //Cas ou le bouton avancer est "terminer"
     $('#modalAi').modal('hide');
   }
       
 }
 
+//Active ou désactive les boutons pour avancer
+function toggleButton(n) {
+  if(n==0) {
+    document.getElementById("prevBtn").disabled = true;
+    document.getElementById("nextBtn").disabled = true;
+  }
+  else {
+    document.getElementById("prevBtn").disabled = false;
+    document.getElementById("nextBtn").disabled = false;
+  }
+}

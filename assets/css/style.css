@@ -266,8 +266,6 @@ body.modal-open {
   opacity: 0.5;
 }
 
-
-
 #modalAi .step.active {
   opacity: 1;
 }
@@ -280,6 +278,41 @@ body.modal-open {
 
 #modalAi .modal-footer {
   display: block;
+}
+
+/*css for hiding the default input but it will be still accessible for the browser when submiting*/
+#modalAi input {
+  width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+#modalAi input + label {
+  font-family: "Dosis", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 15px;
+  border-radius: 3px;
+  transition: 0.5s;
+  margin-top: 25px;
+  color: #fff;
+  background: #49b5e7;
+  cursor: pointer;
+}
+
+#modalAi img {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+#modalAi label > i {
+  margin-right: 8px;
 }
 
 /* Mobile Navigation */
